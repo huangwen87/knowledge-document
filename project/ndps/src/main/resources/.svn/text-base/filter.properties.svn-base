@@ -1,0 +1,28 @@
+#新闻流入统计
+stat_in = NewsStatis
+#新闻处理速率
+speed = NewsVelocity
+#新闻去重比例
+rate = NewsRatio
+#含有垃圾信息的新闻统计
+dust = NewsTrash
+#状态信息
+#stat=NewsStatus
+#每个模块的日志报告
+#log=NewsLog
+
+TimeDust = NewsTimeDust
+#TimeWeight = NewsTimeWeight
+TimeSimhash = NewsTimeSimhash
+TimeShingle = NewsTimeShingle
+TimeShingling = NewsTimeShingling
+
+#按时间戳清理七天前的数据的表
+tablebytimestamp = ratio,statis,trash,velocity
+#按日期清理七天前的数据的表
+tablebydate = news,codematch,news_senana_predict,news_indcls_result,dupIDcount,news_senana_filtered,news_senana_indcls,news_sentiment_test_samples,weibo_sentiment_test_samples
+#按日期清理两天前的数据的表
+tbd2d = shingle,shingling,signal,news_sentiment_flow_total
+
+tablebyweek = news_sentiment_sample
+						

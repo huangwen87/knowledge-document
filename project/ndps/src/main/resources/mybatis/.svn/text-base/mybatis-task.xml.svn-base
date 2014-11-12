@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd" >
+<mapper namespace="com.gw.ps.dao.NdrCleanDaoImpl">
+	<delete id="ratio" parameterType="Long">
+		<![CDATA[
+			delete from news_duprmv_ratio where `timestamp` < #{o}
+		]]>	
+	</delete>	
+	<delete id="statis" parameterType="Long">
+		<![CDATA[
+			delete from news_duprmv_statis where `timestamp` < #{o}
+		]]>
+	</delete>	
+	<delete id="trash" parameterType="Long">
+		<![CDATA[
+			delete from news_duprmv_trash where `timestamp` < #{o}
+		]]>
+	</delete>	
+	<delete id="velocity" parameterType="Long">
+		<![CDATA[
+			delete from news_duprmv_velocity where `timestamp` < #{o}
+		]]>
+	</delete>	
+	<delete id="match" parameterType="Long">
+		<![CDATA[
+			delete from news_duprmv_match where `timestamp` < #{o}
+		]]>
+	</delete>	
+	<delete id="news" parameterType="String">
+		<![CDATA[
+			delete from news_duprmv_content where `time` < #{o}
+		]]>
+	</delete>	
+	<delete id="codematch" parameterType="String">
+		<![CDATA[
+			delete from news_duprmv_codematch where `time` < #{o}
+		]]>
+	</delete>	
+	<delete id="shingle" parameterType="String">
+		<![CDATA[
+			delete from news_duprmv_shingle where `time` < #{o}
+		]]>	
+	</delete>	
+	<delete id="shingling" parameterType="String">
+		<![CDATA[
+			delete from news_duprmv_shingling where `time` < #{o}
+		]]>
+	</delete>	
+	<delete id="signal" parameterType="String">
+		<![CDATA[
+			delete from news_duprmv_signals where `time` < #{o}
+		]]>
+	</delete>	
+	<delete id="news_senana_predict" parameterType="String">
+		<![CDATA[
+			delete from news_senana_predict where `logtime` < #{o}
+		]]>
+	</delete>	
+	<delete id="news_indcls_result" parameterType="String">
+		<![CDATA[
+			delete from news_indcls_result where `logtime` < #{o}
+		]]>
+	</delete>	
+	<delete id="dupIDcount" parameterType="String">
+		<![CDATA[
+			delete from dupIDcount where `time` < #{o}
+		]]>
+	</delete>	
+	<delete id="news_senana_filtered" parameterType="String">
+		<![CDATA[
+			delete from news_senana_filtered where `logtime` < #{o}
+		]]>
+	</delete>	
+	<delete id="news_senana_indcls" parameterType="String">
+		<![CDATA[
+			delete from news_senana_indcls where `logtime` < #{o}
+		]]>
+	</delete>
+	
+	<!-- update maxid -->
+	<update id="news_maxid_update"  parameterType="String">
+	     <![CDATA[
+			update news_maxid_copy set maxid=#{o}
+		]]>
+	</update>
+	
+    <!-- select maxid -->
+	<select id="news_maxid_select" resultType = "java.lang.Integer" parameterType="String" >
+	     <![CDATA[
+			select maxid from news_maxid_copy
+		]]>
+	</select>
+	
+	
+	<!-- id跟 filter.properties文件中对应上-->
+	<delete id="news_sentiment_test_samples" parameterType="String">
+		<![CDATA[
+			delete from news_sentiment_test_samples where `date` < #{o}
+		]]>
+	</delete>
+	
+	<delete id="weibo_sentiment_test_samples" parameterType="String">
+		<![CDATA[
+			delete from weibo_sentiment_test_samples where `date` < #{o}
+		]]>
+	</delete>
+	
+	<!-- 删除情感样本 -->
+	<delete id="news_sentiment_sample" parameterType="String">
+		<![CDATA[
+			delete from news_sentiment_sample where `EntryDate` < #{o}
+		]]>
+	</delete>
+	
+    <!-- 删除 情感统计数据 -->
+	<delete id="news_sentiment_flow_total" parameterType="String">
+		<![CDATA[
+			delete from news_sentiment_flow_total where `timein` < #{o}
+		]]>
+	</delete>
+	
+		
+</mapper>

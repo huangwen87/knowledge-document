@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd" >
+<mapper namespace="common">
+	<resultMap id="NewsStatisResult" type="NewsStatis">
+		<id property="id" column="id"/>
+		<result property="newsnum" column="newsnum"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsVelocityResult" type="NewsVelocity">
+		<id property="id" column="id"/>
+		<result property="velocity" column="velocity"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsRatioResult" type="NewsRatio">
+		<id property="id" column="id"/>
+		<result property="ratio" column="ratio"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsTrashResult" type="NewsTrash">
+		<id property="id" column="id"/>
+		<result property="trash" column="trash"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	
+	<resultMap id="NewsFilterResult" type="NewsFilter">
+		<result property="filterId" column="id"/>
+		<result property="originId" column="id2"/>
+		<result property="content" column="text"/>
+		<result property="isdup" column="isdup"/>
+		<result property="istrash" column="isdust"/>
+		<result property="iscd" column="iscd"/>
+		<result property="dupflag" column="flag"/>
+		<result property="signal" column="signal"/>
+		<result property="timestamp" column="time"/>
+		<result property="title" column="title"/>
+		<result property="dust" column="dust"/>
+	</resultMap>
+	
+	<resultMap id="NewsMatchResult" type="NewsMatch">
+		<result property="matchId" column="id"/>
+		<result property="organCode" column="itcode"/>
+		<result property="content" column="itname"/>
+		<result property="timestamp" column="time"/>
+	</resultMap>
+	
+	<resultMap id="NewsShingleResult" type="NewsShingle">
+		<result property="id" column="id"/>
+		<result property="shingle" column="shingle"/>
+		<result property="time" column="time"/>
+	</resultMap>
+	
+	<resultMap id="NewsShinglingResult" type="NewsShingling">
+		<result property="id" column="id"/>
+		<result property="wordnum" column="wordnum"/>
+		<result property="shingling" column="shingling"/>
+		<result property="time" column="time"/>
+	</resultMap>
+	
+	<resultMap id="NewsSignalResult" type="NewsSignal">
+		<result property="id" column="id"/>
+		<result property="signal" column="signal"/>
+		<result property="time" column="time"/>
+	</resultMap>
+	
+	<resultMap id="NewsTimeSimhashResult" type="NewsTimeSimhash">
+		<id property="id" column="id"/>
+		<result property="timesimhash" column="timesimhash"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsTimeDustResult" type="NewsTimeDust">
+		<id property="id" column="id"/>
+		<result property="timedust" column="timedust"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsTimeShingleResult" type="NewsTimeShingle">
+		<id property="id" column="id"/>
+		<result property="timeshingle" column="timeshingle"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsTimeShinglingResult" type="NewsTimeShingling">
+		<id property="id" column="id"/>
+		<result property="timeshingling" column="timeshingling"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsTimeWeightResult" type="NewsTimeWeight">
+		<id property="id" column="id"/>
+		<result property="timeweight" column="timeweight"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<!-- 正负面预判 -->
+	<resultMap id="NeaPredictResult" type="NeaPredict">
+		<id property="newsCode" column="id"/>
+		<result property="sentiment" column="sentiment"/>
+		<result property="posRate" column="posrate"/>
+		<result property="negRate" column="negrate"/>
+		<result property="processTime" column="processtime"/>
+		<result property="logTime" column="logtime"/>
+		<result property="title" column="title"/>
+		<result property="text" column="text"/>
+	</resultMap>
+	
+	<!-- 行业分类结果 -->
+	<resultMap id="NicCategoryResult" type="NicCategory">
+		<id property="newsCode" column="id"/>
+		<result property="result" column="result"/>
+		<result property="categoryName" column="name"/>
+		<result property="logTime" column="logtime"/>
+		<result property="title" column="title"/>
+		<result property="content" column="content"/>
+	</resultMap>
+</mapper>

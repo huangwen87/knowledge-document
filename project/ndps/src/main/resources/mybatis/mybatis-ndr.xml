@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd" >
+<mapper namespace="com.gw.ps.dao.INewsDuplicateRemovalDao">
+	
+	<insert id="addstatis"  parameterType="NewsStatis">
+		<![CDATA[
+			insert into news_duprmv_statis(id,timestamp,newsnum) values(#{id},#{timestamp},#{newsnum})
+		]]>	
+	</insert>
+	
+	<insert id="addvelocity"  parameterType="NewsVelocity">
+		<![CDATA[
+			insert into news_duprmv_velocity(id,timestamp,velocity) values(#{id},#{timestamp},#{velocity})
+		]]>	
+	</insert>
+	
+	<insert id="addratio"  parameterType="NewsRatio">
+		<![CDATA[
+			insert into news_duprmv_ratio(id,timestamp,ratio) values(#{id},#{timestamp},#{ratio})
+		]]>	
+	</insert>
+	
+	<insert id="addtrash"  parameterType="NewsTrash">
+		<![CDATA[
+			insert into news_duprmv_trash(id,timestamp,trash) values(#{id},#{timestamp},#{trash})
+		]]>	
+	</insert>
+	
+	<insert id="addfilter"  parameterType="NewsFilter">
+			insert into news_duprmv_content (id,text,title,id2,isdup,isdust,time,flag,iscd,`signal`,dust,timeout,timein,timedesc,channel,group_name,site_name, webgrab,trssource,dustflag,slevel) 
+			values (#{filterId},#{content},#{title},#{originId},#{isdup},#{istrash},#{timestamp},#{dupflag},#{iscd},#{signal},#{dust},#{timeOut},#{timeIn},#{timedesc},#{channel},#{groupName},#{siteName},#{webgrab},#{trssource},#{dustflag},#{slevel})
+	</insert>
+	
+	<insert id="addmatch"  parameterType="NewsMatch">
+		<![CDATA[
+			INSERT INTO `news_duprmv_codematch` (ID,ITCODE,ITNAME,`time`,timeout,timein) VALUES (#{matchId},#{organCode},#{content},#{timestamp},#{timeOut},#{timeIn})
+		]]>	
+	</insert>
+	
+	<insert id="addshingle"  parameterType="NewsShingle">
+			insert into `news_duprmv_shingle` (id,shingle,`time`) values (#{id},#{shingle},#{time})
+	</insert>
+	
+	<insert id="addshingling"  parameterType="NewsShingling">
+		<![CDATA[
+			INSERT INTO `news_duprmv_shingling` (id,wordnum,shingling,`time` ) VALUES (#{id},#{wordnum},#{shingling},#{time})
+		]]>	
+	</insert>
+	
+	<insert id="addsignal"  parameterType="NewsSignal">
+		<![CDATA[
+			INSERT INTO `news_duprmv_signals` (id,`signal`,`time`, slevel) VALUES (#{id},#{signal},#{time},#{slevel})
+		]]>	
+	</insert>
+	
+	<insert id="addtimesimhash"  parameterType="NewsTimeSimhash">
+			insert into `news_duprmv_timesimhash` (id,timesimhash,`timestamp`) values (#{id},#{timesimhash},#{timestamp})
+	</insert>
+	
+	<insert id="addtimedust"  parameterType="NewsTimeDust">
+			insert into `news_duprmv_timedust` (id,timedust,`timestamp`) values (#{id},#{timedust},#{timestamp})
+	</insert>
+	
+	<insert id="addtimeshingle"  parameterType="NewsTimeShingle">
+			insert into `news_duprmv_timeshingle` (id,timeshingle,`timestamp`) values (#{id},#{timeshingle},#{timestamp})
+	</insert>
+	
+	<insert id="addtimeshingling"  parameterType="NewsTimeShingling">
+			insert into `news_duprmv_timeshingling` (id,timeshingling,`timestamp`) values (#{id},#{timeshingling},#{timestamp})
+	</insert>
+	
+	<insert id="addtimeweight"  parameterType="NewsTimeWeight">
+			insert into `news_duprmv_timeweight` (id,timeweight,`timestamp`) values (#{id},#{timeweight},#{timestamp})
+	</insert>
+	
+	<insert id="addlog"  parameterType="NewsLog">
+			insert into `news_duprmv_logs` (className,type,level,times,log) values (#{className},#{type},#{level},#{times},#{log})
+	</insert>
+	
+</mapper>

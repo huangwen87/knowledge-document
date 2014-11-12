@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/DataPlatform/!svn/ver/33125/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao
+END
+INicDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/DataPlatform/!svn/ver/31142/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao/INicDao.java
+END
+INewsDuplicateRemovalDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao/INewsDuplicateRemovalDao.java
+END
+INeaPredictDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/DataPlatform/!svn/ver/31309/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao/INeaPredictDao.java
+END

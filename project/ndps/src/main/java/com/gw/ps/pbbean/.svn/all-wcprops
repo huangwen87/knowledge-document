@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/DataPlatform/!svn/ver/31846/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/pbbean
+END
+PbNewsInnerUsing.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/pbbean/PbNewsInnerUsing.java
+END
+PbNewsSentimentUntreated.java
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/DataPlatform/!svn/ver/31309/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/pbbean/PbNewsSentimentUntreated.java
+END
+PbNewsSentiment.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/pbbean/PbNewsSentiment.java
+END
+PbLogMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/pbbean/PbLogMessage.java
+END
+PbNewsRes.java
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/DataPlatform/!svn/ver/31638/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/pbbean/PbNewsRes.java
+END
+PbSignalShingle.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/DataPlatform/!svn/ver/31846/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/pbbean/PbSignalShingle.java
+END
+PbNewsClassify.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/pbbean/PbNewsClassify.java
+END
+PbNewsSentimentTreated.java
+K 25
+svn:wc:ra_dav:version-url
+V 181
+/svn/DataPlatform/!svn/ver/31309/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/pbbean/PbNewsSentimentTreated.java
+END

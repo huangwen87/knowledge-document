@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<mysql>
+		<DriverClass>com.mysql.jdbc.Driver</DriverClass>
+		<JdbcUrl>jdbc:mysql://10.15.107.75:3306/sentiment_classify?autoReconnect=true</JdbcUrl>
+		<User>root</User>
+		<Password>111111</Password>
+	</mysql>
+</database>

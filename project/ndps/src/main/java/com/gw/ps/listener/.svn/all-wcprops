@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/DataPlatform/!svn/ver/32837/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/listener
+END
+NdrFilterListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/svn/DataPlatform/!svn/ver/31638/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/listener/NdrFilterListener.java
+END
+NdrShingleListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/listener/NdrShingleListener.java
+END
+MultipleNdrListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/listener/MultipleNdrListener.java
+END
+MultipleNeaListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/DataPlatform/!svn/ver/32837/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/listener/MultipleNeaListener.java
+END
+NdrMatchListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/listener/NdrMatchListener.java
+END
+NdrSignalListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/svn/DataPlatform/!svn/ver/32837/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/listener/NdrSignalListener.java
+END
+LogEventListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/listener/LogEventListener.java
+END
+MultipleNicListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/listener/MultipleNicListener.java
+END
+NdrShinglingListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 181
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/listener/NdrShinglingListener.java
+END

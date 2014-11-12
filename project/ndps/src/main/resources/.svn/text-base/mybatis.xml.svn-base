@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC  "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<package name="com.gw.ps.model"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="mybatis/mybatis-nic.xml" />
+		<mapper resource="mybatis/mybatis-ndr.xml" />
+		<mapper resource="mybatis/mybatis-task.xml" />
+		<mapper resource="mybatis/mybatis-nea.xml" />
+		<mapper resource="mybatis/mybatis-common.xml" />
+		<mapper resource="mybatis/mybatis-newtask.xml" />
+	</mappers>
+
+</configuration>	

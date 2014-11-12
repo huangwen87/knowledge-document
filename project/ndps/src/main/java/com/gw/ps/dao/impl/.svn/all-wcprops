@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/DataPlatform/!svn/ver/33125/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao/impl
+END
+NicDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/DataPlatform/!svn/ver/31142/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao/impl/NicDaoImpl.java
+END
+NewsDuplicateRemovalDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao/impl/NewsDuplicateRemovalDaoImpl.java
+END
+NeaPredictDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/svn/DataPlatform/!svn/ver/31309/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao/impl/NeaPredictDaoImpl.java
+END
+TaskOnSqlServerGetSentimentSampleDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 201
+/svn/DataPlatform/!svn/ver/31309/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao/impl/TaskOnSqlServerGetSentimentSampleDaoImpl.java
+END
+TaskOnSqlServerGetDataDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 190
+/svn/DataPlatform/!svn/ver/33125/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao/impl/TaskOnSqlServerGetDataDaoImpl.java
+END
+CleanDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/DataPlatform/!svn/ver/31309/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao/impl/CleanDaoImpl.java
+END
+TotalDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/DataPlatform/!svn/ver/31408/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao/impl/TotalDaoImpl.java
+END
+TaskOnSqlServerDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/DataPlatform/!svn/ver/33125/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao/impl/TaskOnSqlServerDaoImpl.java
+END
+GetSentimentSampleDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/DataPlatform/!svn/ver/31309/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/dao/impl/GetSentimentSampleDaoImpl.java
+END

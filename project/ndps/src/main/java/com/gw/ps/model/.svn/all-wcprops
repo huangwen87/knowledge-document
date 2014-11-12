@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/DataPlatform/!svn/ver/32837/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model
+END
+NewsSentimentFlowTotal.java
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/DataPlatform/!svn/ver/31330/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsSentimentFlowTotal.java
+END
+NeaPredict2.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/DataPlatform/!svn/ver/31309/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NeaPredict2.java
+END
+NewsTimeWeight.java
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsTimeWeight.java
+END
+NewsStatis.java
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsStatis.java
+END
+NewsSentimentSample.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/DataPlatform/!svn/ver/31309/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsSentimentSample.java
+END
+NewsTimeShingle.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsTimeShingle.java
+END
+NicCategory.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NicCategory.java
+END
+BaseNews.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/BaseNews.java
+END
+NewsTimeSimhash.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsTimeSimhash.java
+END
+NewsSignal.java
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/DataPlatform/!svn/ver/31846/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsSignal.java
+END
+NewsRatio.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsRatio.java
+END
+NewsTrash.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsTrash.java
+END
+NeaPredict.java
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/DataPlatform/!svn/ver/32837/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NeaPredict.java
+END
+NewsLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsLog.java
+END
+NewsShingling.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsShingling.java
+END
+NewsFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/DataPlatform/!svn/ver/31638/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsFilter.java
+END
+NewsFlowTime.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsFlowTime.java
+END
+NewsShingle.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsShingle.java
+END
+NeaSentimentNews.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/DataPlatform/!svn/ver/31309/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NeaSentimentNews.java
+END
+NewsMatch.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsMatch.java
+END
+NewsVelocity.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsVelocity.java
+END
+NewsTimeDust.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsTimeDust.java
+END
+NeaPredictFiltered.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NeaPredictFiltered.java
+END
+NewsTimeShingling.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/model/NewsTimeShingling.java
+END

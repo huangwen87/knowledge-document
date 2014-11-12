@@ -1,0 +1,5 @@
+nohup ./hive --service hiveserver >/dev/null 2>/dev/null &
+
+create table test(id int, ip string) row format delimited fields terminated by ',' stored as textfile;
+
+load data local inpath '/home/hadoop/iptocc/ipdata.txt' overwrite into table test;

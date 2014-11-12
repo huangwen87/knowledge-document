@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">	
+	<bean name="ndrDao" class="com.gw.ps.dao.impl.NewsDuplicateRemovalDaoImpl"/>
+	<bean name="logEventListener" class="com.gw.ps.listener.LogEventListener"/>
+    <bean name="ndrMatchListener" class="com.gw.ps.listener.NdrMatchListener"/>
+    <bean name="ndrFilterListener" class="com.gw.ps.listener.NdrFilterListener"/>
+    <bean name="ndrShingleListener" class="com.gw.ps.listener.NdrShingleListener"/>
+    <bean name="ndrShinglingListener" class="com.gw.ps.listener.NdrShinglingListener"/>
+    <bean name="ndrSignalListener" class="com.gw.ps.listener.NdrSignalListener"/>
+</beans>

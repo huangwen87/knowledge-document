@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		">
+
+    <!-- 配置jmsTemplate -->
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="poolFactory" />
+		<property name="defaultDestinationName" value="myTopic.develop" />
+		<!-- 区别它采用的模式为false是p2p为true是订阅-->
+		<property name="pubSubDomain" value="true" />
+	</bean> 
+	
+	 <!-- 配置jmsTemplate -->
+	<bean id="myJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="poolFactory" />
+		<property name="defaultDestinationName" value="news.sentiment.untreated.queue" />
+		<!-- 区别它采用的模式为false是p2p为true是订阅-->
+		<property name="pubSubDomain" value="false" />
+	</bean> 
+	
+	<!-- 配置activemq连接池 -->
+	<bean id="poolFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+		<property name="connectionFactory" ref="amqConnectionFactory" />
+		<property name="maxConnections" value="100" />
+		<property name="idleTimeout" value="0" />
+	</bean>
+
+	<!-- 配置activemq连接 -->
+	<bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<!-- <property name="brokerURL" value="failover:(tcp://10.15.89.177:61616,tcp://10.15.89.176:61617)?randomize=false" /> -->
+		<property name="brokerURL" value="tcp://10.15.89.177:61616" />
+	</bean>
+
+	<!-- 配置消息监听 -->
+	<bean id="matchQueueDestination"  class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0" value="news-newsIndRes-queue" />
+	</bean>
+	<bean id="ndrMatchListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+        <property name="connectionFactory" ref="poolFactory"/>  
+        <property name="destination" ref="matchQueueDestination"/>  
+        <property name="messageListener" ref="ndrMatchListener"/>   
+        <property name="sessionTransacted" value="true"/>    
+	    <property name="receiveTimeout" value="10000" />     
+    </bean> 
+    
+    <!-- 发送消息的目的地（一个队列） ，即构造一个新的ActiveMQTopic实例，0为构造方法中第一个参数-->
+	<bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">
+		<constructor-arg index="0" value="myTopic.develop" />
+	</bean>
+	<!-- 配置消息监听 -->
+	<bean id="listenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+        <property name="connectionFactory" ref="poolFactory"/>  
+        <property name="destination" ref="topicDestination"/>  
+        <property name="messageListener" ref="logEventListener"/>  
+    </bean>  
+    
+    <!-- 配置消息监听 -->
+    <bean id="filterQueueDestination"  class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0" value="news-newsDupRes-queue" />
+	</bean>
+	<bean id="ndrFilterListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+        <property name="connectionFactory" ref="poolFactory"/>  
+        <property name="destination" ref="filterQueueDestination"/>  
+        <property name="messageListener" ref="ndrFilterListener"/>  
+        <property name="sessionTransacted" value="true"/>    
+	    <property name="receiveTimeout" value="10000" />    
+    </bean> 
+    
+    <!-- 配置消息监听 -->
+    <bean id="shingleQueueDestination"  class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0" value="shingle-queue" />
+	</bean>
+	<bean id="ndrShingleListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+        <property name="connectionFactory" ref="poolFactory"/>  
+        <property name="destination" ref="shingleQueueDestination"/>  
+        <property name="messageListener" ref="ndrShingleListener"/>  
+        <!-- JMS事物 -->  
+        <property name="sessionTransacted" value="true"/>    
+	    <property name="receiveTimeout" value="10000" />    
+    </bean> 
+    
+    <!-- 配置消息监听 -->
+    <bean id="shinglingQueueDestination"  class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0" value="shingling-queue" />
+	</bean>
+	<bean id="ndrShinglingListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+        <property name="connectionFactory" ref="poolFactory"/>  
+        <property name="destination" ref="shinglingQueueDestination"/>  
+        <property name="messageListener" ref="ndrShinglingListener"/>  
+        <property name="sessionTransacted" value="true"/>    
+	    <property name="receiveTimeout" value="10000" />    
+    </bean> 
+    
+    <!-- 配置消息监听 -->
+    <bean id="signalQueueDestination"  class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0" value="signal-queue" />
+	</bean>
+	<bean id="ndrSignalListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+        <property name="connectionFactory" ref="poolFactory"/>  
+        <property name="destination" ref="signalQueueDestination"/>  
+        <property name="messageListener" ref="ndrSignalListener"/>  
+        <property name="sessionTransacted" value="true"/>    
+	    <property name="receiveTimeout" value="10000" />    
+    </bean> 
+    
+     <!-- 这种方式可以简化配置过程,针对不同的队列执行指定的方法，也可以通过实现MessageListener默认调用其onMessage方法 -->
+     <!-- 
+    <jms:listener-container connection-factory="poolFactory" >
+		<jms:listener destination="news-newsIndRes-queue" ref="multipleNdrListener" method="receiveMatchMsg" />
+		<jms:listener destination="signal-queue" ref="ndrSignalListener"/>
+	</jms:listener-container>
+	<bean name="multipleNdrListener" class="com.gw.ps.listener.MultipleNdrListener"/>
+    -->
+    
+    <jms:listener-container connection-factory="poolFactory" >
+    <!--
+		<jms:listener destination="news.sentiment.predict.queue" ref="multipleNeaListener" method="sentimentPredict" />
+		<jms:listener destination="news.classify.predict.queue" ref="multipleNicListener" method="classifyPredict" />
+		<jms:listener destination="news.sentiment.filtered.queue" ref="multipleNeaListener" method="sentimentFiltered" />
+     -->
+		<jms:listener destination="news.sentiment.predict.wangSourcequeue" ref="multipleNeaListener" method="getNewsSentimentTreated" />
+		<!-- <jms:listener destination="news.sentiment.untreated.queue" ref="multipleNeaListener" method="getNewsSentimentUntreated" /> -->
+	</jms:listener-container>
+	
+	<!-- 返回数据是否写入 配置 -->
+	<bean id="iswrite" class="java.lang.String">
+	    <constructor-arg value="true" />
+	</bean>
+	
+</beans>

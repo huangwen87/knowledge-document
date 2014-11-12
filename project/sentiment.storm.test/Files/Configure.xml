@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configure>
+        <mysql>
+                <DriverClass>com.mysql.jdbc.Driver</DriverClass>
+                <JdbcUrl>jdbc:mysql://10.15.89.178:3306/ncps?autoReconnect=true</JdbcUrl>
+                <User>root</User>
+                <Password>111111</Password>
+        </mysql>
+        <bayesfilter>
+                <DriverClass>com.mysql.jdbc.Driver</DriverClass>
+                <JdbcUrl>jdbc:mysql://10.15.89.178:3306/ncps</JdbcUrl>
+                <User>root</User>
+                <Password>111111</Password>
+        </bayesfilter>
+	<nlpir>
+		<DataPath>/etc/sentiment</DataPath>
+		<UsrDictPath>/etc/sentiment/userdict.txt</UsrDictPath>
+	</nlpir>
+        <MQSource>
+                <Url>failover:(tcp://10.15.107.75:61616)?initialReconnectDelay=100</Url>
+        </MQSource>
+        <MQDestination>
+                <Url>failover:(tcp://10.15.107.75:61616)?initialReconnectDelay=100</Url>
+        </MQDestination>
+</configure>

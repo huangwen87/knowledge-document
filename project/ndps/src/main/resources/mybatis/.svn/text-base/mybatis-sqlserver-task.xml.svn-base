@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd" >
+<mapper namespace="com.gw.ps.sqlserver">
+
+	<!-- 情感新闻 -->
+	<resultMap id="NeaSentimentNewsResult" type="NeaSentimentNews">
+		<id property="newsId" column="newsid"/>
+		<result property="entryDate" column="EntryDate"/>
+		<result property="newsType" column="newstype"/>
+		<result property="title" column="title"/>
+		<result property="text" column="Text"/>
+		<result property="publishDate" column="publishdate"/>
+		<result property="categoryLists" column="categoryLists"/>
+	</resultMap>
+
+	<select id="newsextractforemotion" statementType="CALLABLE"  resultMap = "NeaSentimentNewsResult">
+	<![CDATA[
+		{call 
+	    usp_NewsExtractForEmotionByID 
+	    (#{bgeinID},#{EndID})
+	    }
+	]]>
+	</select>
+	
+	<insert id="addResult"  parameterType="NeaPredict2">
+		<![CDATA[
+			insert into NewsInfoEmotionReturn(NewsID,EmotionFlag,IsValid) 
+			values(#{newsCode},#{sentiment},#{isFiltered})
+		]]>	
+	</insert>
+	<select  id="getCount"  resultType="java.lang.Integer" parameterType="NeaPredict2">
+		<![CDATA[
+			select count(*) from NewsInfoEmotionReturn where NewsID=#{newsCode}
+		]]>
+	</select>
+	<update  id="update"  parameterType="NeaPredict2">
+		<![CDATA[
+			update NewsInfoEmotionReturn 
+			set EmotionFlag=#{sentiment},IsValid=#{isFiltered} 
+			where NewsID=#{newsCode}
+		]]>
+	</update>
+	
+</mapper>

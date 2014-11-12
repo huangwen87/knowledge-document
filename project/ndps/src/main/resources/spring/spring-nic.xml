@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">	
+	<bean name="multipleNicListener" class="com.gw.ps.listener.MultipleNicListener"/>
+	<bean name="nicService" class="com.gw.ps.service.impl.NicServiceImpl"/>
+	<bean name="nicDao" class="com.gw.ps.dao.impl.NicDaoImpl"/>
+</beans>

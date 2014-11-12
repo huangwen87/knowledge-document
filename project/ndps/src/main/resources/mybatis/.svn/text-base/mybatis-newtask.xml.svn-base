@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd" >
+<mapper namespace="com.gw.ps.dao.impl.TotalDaoImpl">
+
+   <select id="totalInFlow" resultType="java.lang.Integer"  parameterType="NewsFlowTime" >
+			select count(*) from news_duprmv_content where 1=1
+			 <include refid="in_filter_sql"/>
+	</select>	
+	
+	<sql id="in_filter_sql">
+		<if test="!(dateStr_start==null||dateStr_start=='')">
+		<![CDATA[
+			and timein <= #{dateStr_start}
+			]]>	
+		</if>
+		<if test="!(dateStr_end==null||dateStr_end=='')">
+		<![CDATA[
+			and timein >= #{dateStr_end}
+			]]>	
+		</if>
+	</sql>
+	
+	
+	<select id="totalOutFlow" resultType="java.lang.Integer"  parameterType="NewsFlowTime" >
+			select count(*) from news_duprmv_content where 1=1
+			 <include refid="out_filter_sql"/>
+	</select>	
+	
+	<sql id="out_filter_sql">
+		<if test="!(dateStr_start==null||dateStr_start=='')">
+		<![CDATA[
+			and timeout <= #{dateStr_start}
+			]]>	
+		</if>
+		<if test="!(dateStr_end==null||dateStr_end=='')">
+		<![CDATA[
+			and timeout >= #{dateStr_end}
+			]]>	
+		</if>
+	</sql>
+	
+	
+	<insert id="newsSentimentFlowTotal"  parameterType="NewsSentimentFlowTotal">
+		<![CDATA[
+			insert into news_sentiment_flow_total(newsid,newscode,timein,timeout) values(#{newsID},#{newsCode},#{timeIn},#{timeOut})
+		]]>	
+	</insert>
+	
+	<update id="batchUpdate" parameterType="list">
+	       update news_sentiment_flow_total
+	       <trim prefix="set" suffixOverrides=",">
+	           <trim prefix="timeout = case" suffix="end">
+		             <foreach collection="list" item="i" index="index">
+		                        <if test="i.timeOut!=null">
+		                           when (newscode=#{i.newsCode}) then #{i.timeOut}
+		                        </if>
+		             </foreach>
+               </trim>
+	       where
+		       <foreach collection="list" separator="or" item="i" index="index">
+		          (newscode=#{i.newsCode})
+       		   </foreach>
+	       </trim>
+	       
+	</update>
+	
+	
+	
+	
+	
+	
+</mapper>

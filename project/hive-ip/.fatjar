@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu Jul 10 13:25:03 CST 2014
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=hive-exec-0.11.0.jar
+manifest.mergeall=true
+manifest.mainclass=
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=

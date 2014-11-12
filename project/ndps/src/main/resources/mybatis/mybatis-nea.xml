@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd" >
+<mapper namespace="com.gw.ps.dao.INeaPredictDao">
+	
+	<insert id="addNeaPredict"  parameterType="NeaPredict">
+		<![CDATA[
+			INSERT INTO `news_senana_predict` (id,sentiment,posrate,negrate,processtime,title,text,logtime ) VALUES (#{newsCode},#{sentiment},#{posRate},#{negRate},#{processTime},#{title},#{text},#{logTime})
+		]]>	
+	</insert>
+	
+	<insert id="addNewsSentiClass"  parameterType="NeaPredict">
+		<![CDATA[
+			INSERT INTO `news_senana_indcls` (id,sentiment,posrate,negrate,processtime,title,text,company,classname,result,logtime ) 
+			VALUES (#{newsCode},#{sentiment},#{posRate},#{negRate},#{processTime},#{title},#{text},#{companyNames},#{classNameList},#{result},#{logTime})
+		]]>	
+	</insert>
+	
+	<insert id="addNeaPredictFiltered"  parameterType="NeaPredictFiltered">
+		<![CDATA[
+			INSERT INTO `news_senana_filtered` (newsCode,result,classNameList,title,content,companyNames,isFiltered,source,logtime) 
+			VALUES (#{newsCode},#{result},#{classNameList},#{title},#{content},#{companyNames},#{isFiltered},#{source},#{logTime})
+		]]>	
+	</insert>
+	
+	<insert id="addNewsSenanaIndcls"  parameterType="NeaPredict2">
+		<![CDATA[
+			INSERT INTO `news_senana_indcls` (id,sentiment,posrate,negrate,processtime,title,text,company,classname,result,dataFrom,logtime ) 
+			VALUES (#{newsCode},#{sentiment},#{posRate},#{negRate},#{processTime},#{title},#{text},#{companyNames},#{classNameList},#{result},#{dataFrom},#{logTime})
+		]]>	
+	</insert>
+	
+	<insert id="addNewsSenanaFiltered"  parameterType="NeaPredict2">
+		<![CDATA[
+			INSERT INTO `news_senana_filtered` (newsCode,result,classNameList,title,content,companyNames,isFiltered,source,dataFrom,logtime, `publishdate`) 
+			VALUES (#{newsCode},#{result},#{classNameList},#{title},#{text},#{companyNames},#{isFiltered},#{source},#{dataFrom},#{logTime},#{publishdate})
+		]]>	
+	</insert>
+	
+	<insert id="addNewsSentestSample"  parameterType="NeaPredict2">
+		<![CDATA[
+			INSERT INTO `news_sentiment_test_samples` (newscode,sentiment,title,text,classify,organization,isFiltered,dataFrom,`date`,`publishdate`) 
+			VALUES (#{newsCode},#{sentiment},#{title},#{text},#{classNameList},#{companyNames},#{isFiltered},#{dataFrom},#{logTime},#{publishdate})
+		]]>	
+	</insert>
+	
+		
+	<insert id="addNewsSenWeiboSample"  parameterType="NeaPredict2">
+		<![CDATA[
+			INSERT INTO `weibo_sentiment_test_samples` (title,text,sentiment,classify,`date`,organization,newscode,`publishdate`) 
+			VALUES (#{title},#{text},#{sentiment},#{classNameList},#{logTime},#{companyNames},#{newsCode},#{publishdate})
+		]]>	
+	</insert>
+	
+	
+	<!-- 情感样本插入 -->
+	<insert id="addNewsSentimentSample"  parameterType="NewsSentimentSample">
+		<![CDATA[
+			INSERT INTO `news_sentiment_sample` (NewsId,Title,Text,`PublishDate`,categoryid,CategoryName,IsValid,`EntryDate`) 
+			VALUES (#{newsId},#{title},#{text},#{publishDate},#{categoryid},#{categoryName},#{isValid},#{entryDate})
+		]]>	
+	</insert>
+	
+	
+	
+</mapper>

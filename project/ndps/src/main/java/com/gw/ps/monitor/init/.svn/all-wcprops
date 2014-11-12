@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/DataPlatform/!svn/ver/31324/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/monitor/init
+END
+MonitorAgentReadHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/monitor/init/MonitorAgentReadHandler.java
+END
+MonitorReportService.java
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/monitor/init/MonitorReportService.java
+END
+MonitorClientChannelFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 192
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/monitor/init/MonitorClientChannelFactory.java
+END
+MonitorReportServiceTotal.java
+K 25
+svn:wc:ra_dav:version-url
+V 190
+/svn/DataPlatform/!svn/ver/31324/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/monitor/init/MonitorReportServiceTotal.java
+END
+MonitorService.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/DataPlatform/!svn/ver/31324/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/monitor/init/MonitorService.java
+END
+MonitorAgentDecoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 184
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/monitor/init/MonitorAgentDecoder.java
+END
+MonitorAgentSocketServerFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/monitor/init/MonitorAgentSocketServerFactory.java
+END

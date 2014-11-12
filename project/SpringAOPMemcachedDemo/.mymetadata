@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="SpringAOPMemcachedDemo"
+  id="myeclipse.1394503594716"
+  context-root="/SpringAOPMemcachedDemo"
+  j2ee-spec="6.0"
+  archive="SpringAOPMemcachedDemo.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

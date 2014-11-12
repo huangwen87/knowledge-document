@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd" >
+<mapper namespace="com.gw.ps.dao.INicDao">
+	
+	<insert id="saveNicCategory"  parameterType="NicCategory">
+		<![CDATA[
+			INSERT INTO `news_indcls_result` (id,result,name,title,content,logtime ) VALUES (#{newsCode},#{result},#{categoryName},#{title},#{content},#{logTime})
+		]]>	
+	</insert>
+	
+	<select id="queryCountByIdNicCategory" resultType="java.lang.Integer" parameterType="NicCategory">
+		select count(*) from news_indcls_result where id=#{newsCode}
+	</select>
+	
+	<update id="updateByIdNicCategory" parameterType="NicCategory">
+		update news_indcls_result set result=#{result},name=#{categoryName},lastestlogtime=#{logTime} where id=#{newsCode}
+	</update>
+	
+</mapper>

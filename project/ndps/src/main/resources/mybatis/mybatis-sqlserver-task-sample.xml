@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd" >
+<mapper namespace="com.gw.ps.sqlserversample">
+
+	<!-- 情感新闻 -->
+	<resultMap id="NewsSentimentSampleResult" type="NewsSentimentSample">
+		<id property="id" column="ID"/>
+		<result property="newsId" column="NewsId"/>
+		<result property="title" column="Title"/>
+		<result property="text" column="Text"/>
+		<result property="publishDate" column="PublishDate"/>
+		<result property="categoryid" column="categoryid"/>
+		<result property="categoryName" column="CategoryName"/>
+		<result property="isValid" column="IsValid"/>
+	    <result property="entryDate" column="EntryDate"/>
+	</resultMap>
+
+	<select id="querysample" resultMap="NewsSentimentSampleResult"  parameterType="String">
+	<![CDATA[
+		 select ID, NewsId, Title, Text, PublishDate, categoryid, CategoryName, IsValid, EntryDate
+		 from newscategoryssample where EntryDate > #{o}  
+	]]>
+	</select>	
+	
+</mapper>

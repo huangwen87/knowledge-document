@@ -1,0 +1,45 @@
+﻿环境  hive0.11+mysql5.5
+1、 解压hive0.11并在/conf/下cp hive-default.xml.template 分别命名为：hive-default.xml 和 hive-site.xml
+2、 安装mysql，创建用户和密码并创建数据库hive
+    mysql -u[用户名] -p[用户密码]
+    create database hive； 
+3、 copy一份mysql-connector-java-5.1.*.jar到hive-0.11.0/lib/目录下
+4、 配置hive-site.xml如下
+
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+    <property>
+	  <name>hive.metastore.warehouse.dir</name>
+	  <value>/user/hive/warehouse</value>
+    </property>
+    <property>
+          <name>hive.metastore.uris</name>
+          <value>thrift://【远程机器ip】:9083</value>
+    </property>
+    <property>
+          <name>javax.jdo.option.ConnectionURL</name>
+          <value>jdbc:mysql://【mysql的ip】:3306/hive?characterEncoding=UTF-8</value>
+    </property>
+    <property>
+          <name>javax.jdo.option.ConnectionDriverName</name>
+          <value>com.mysql.jdbc.Driver</value>
+    </property>
+    <property>
+          <name>javax.jdo.option.ConnectionUserName</name>
+          <value>【mysql的用户名】</value>
+    </property>
+    <property>
+          <name>javax.jdo.option.ConnectionPassword</name>
+          <value>【mysql的用户密码】</value>
+    </property>
+</configuration> 
+5、 分别启动远程metastore
+   nohup hive --service metastore >/dev/null 2>/dev/null &
+   nohup hive --service hiveserver >/dev/null 2>/dev/null &
+   
+6、 打jar包自定义函数（通过fat）并通过winscp上传至hive-0.11.0/lib/目录下覆盖hive-exec-0.11.0.jar
+
+
+

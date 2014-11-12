@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/DataPlatform/!svn/ver/33125/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/service
+END
+INicService.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/DataPlatform/!svn/ver/31130/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/service/INicService.java
+END
+GetSentimentSampleSchedule.java
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/DataPlatform/!svn/ver/31309/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/service/GetSentimentSampleSchedule.java
+END
+CleanDataSchedule.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/DataPlatform/!svn/ver/31846/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/service/CleanDataSchedule.java
+END
+ManipulateForSqlServerSchedule.java
+K 25
+svn:wc:ra_dav:version-url
+V 190
+/svn/DataPlatform/!svn/ver/33385/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/service/ManipulateForSqlServerSchedule.java
+END
+TotalDataSchedule.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/DataPlatform/!svn/ver/31378/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/service/TotalDataSchedule.java
+END
+TotalDataSchedule2.java
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/svn/DataPlatform/!svn/ver/31378/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ndps%20Maven%20Webapp/src/main/java/com/gw/ps/service/TotalDataSchedule2.java
+END
