@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd" >
+<mapper namespace="com.gw.ncps.respository.INicManipulateDao">
+    <select id="queryContentById"  resultType = "java.lang.String"  parameterType="String"  >
+		<![CDATA[
+			select text from news_senana_indcls where id=#{o}
+		]]>	
+	</select>
+
+
+	<select id="queryFilter"  resultMap="common.NewsIndustryResult"  parameterType="SearchDTO">
+	<![CDATA[
+		select a.id, title, a.result,a.classname,company,logtime from news_senana_indcls a where  a.classname <> '其它'
+		]]>	
+		<include refid="queryFilter_filter_sql"/> 
+	</select>
+
+	<select id="queryFilterCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+	<![CDATA[
+		select count(*) from news_senana_indcls a where  a.classname <> '其它'
+		]]>	
+		<include refid="queryFilter_filter_sql"/> 
+	</select>
+	
+   <sql id="queryFilter_filter_sql">
+        <if test="!(obj.title==null||obj.title=='')">
+			and title = #{obj.title}
+		</if>
+		<if test="!(obj.industry==null||obj.industry=='')">
+			and a.classname like CONCAT(#{obj.industry},'%')
+		</if>
+		<if test="!(obj.date==null||obj.date=='')">
+		<![CDATA[
+			and logtime >= #{obj.date}
+			and logtime < DATE(DATE_ADD(#{obj.date}, INTERVAL 1 DAY))
+			]]>	
+		</if>
+		<if test="!(obj.ids==null||obj.ids=='')">
+			and a.id in
+			<foreach collection="obj.ids" index="index" item="item" open="(" separator="," close=")">
+	            #{item}
+	        </foreach> 
+		</if>
+		<if test="sortKey=='timestamp'||sortKey==null||sortKey==''">order by logtime ${sortType}</if>
+		<if test="sortKey=='id'">order by a.id ${sortType}</if>
+		<if test="sortKey=='classname'">order by a.classname ${sortType}</if>
+		<if test="sortKey=='title'">order by title ${sortType}</if>
+	</sql>
+	
+	
+	<select id="queryClassifySample"  resultMap="common.NicSampleResult"  parameterType="SearchDTO">
+	<![CDATA[
+		select id,industry,news,title from news_classify_samples where 1=1
+		]]>	
+		<include refid="queryClassifySample_filter_sql"/> 
+	</select>
+
+	<select id="queryClassifySampleCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+	<![CDATA[
+		select count(*)  from news_classify_samples  where 1=1
+		]]>	
+		<include refid="queryClassifySample_filter_sql"/> 
+	</select>
+	
+   <sql id="queryClassifySample_filter_sql">
+		<if test="!(obj.industry==null||obj.industry=='')">
+			and industry = #{obj.industry}
+		</if>
+		<if test="!(obj.title==null||obj.title=='')">
+			and title = #{obj.title}
+		</if>
+		<if test="!(obj.ids==null||obj.ids=='')">
+			and id in
+			<foreach collection="obj.ids" index="index" item="item" open="(" separator="," close=")">
+	            #{item}
+	        </foreach> 
+		</if>
+		<if test="sortKey=='id'">order by id ${sortType}</if>
+		<if test="sortKey=='industry'">order by industry ${sortType}</if>
+	</sql>
+	
+	<delete id="delClassifySampleById">
+		delete from news_classify_samples where id = #{id}
+	</delete>
+	
+	<!-- 查询行业名称 -->
+	<select id="queryClassifyName"  resultType = "java.lang.String">
+		<![CDATA[
+			select distinct name from news_indcls_result
+		]]>	
+	</select>
+	
+</mapper>

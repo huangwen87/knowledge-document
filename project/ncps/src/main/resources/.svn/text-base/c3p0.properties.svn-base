@@ -1,0 +1,24 @@
+c3p0.jdbcUrl=jdbc\:mysql\://10.15.89.178\:3306/ncps
+c3p0.driverClass=com.mysql.jdbc.Driver
+c3p0.user=root
+c3p0.password=111111
+  
+c3p0.acquireIncrement=3   
+c3p0.idleConnectionTestPeriod=60
+c3p0.initialPoolSize=10
+c3p0.maxIdleTime=60
+c3p0.maxPoolSize=20
+c3p0.maxStatements=100
+c3p0.minPoolSize=5
+
+sqlserver1.jdbcUrl=jdbc\:sqlserver\://10.15.87.13\:1433; DatabaseName\=News
+sqlserver1.driverClass=com.microsoft.sqlserver.jdbc.SQLServerDriver
+sqlserver1.user=swotUser
+sqlserver1.password=swotUser*
+sqlserver1.acquireIncrement=3   
+sqlserver1.idleConnectionTestPeriod=120
+sqlserver1.initialPoolSize=10
+sqlserver1.maxIdleTime=60
+sqlserver1.maxPoolSize=20
+sqlserver1.maxStatements=200
+sqlserver1.minPoolSize=5

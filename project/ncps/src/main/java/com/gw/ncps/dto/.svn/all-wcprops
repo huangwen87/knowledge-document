@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/DataPlatform/!svn/ver/31563/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto
+END
+NewsMatchDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsMatchDTO.java
+END
+NewsInfoSourceDetailDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 181
+/svn/DataPlatform/!svn/ver/31563/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsInfoSourceDetailDTO.java
+END
+DropDownDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/DropDownDTO.java
+END
+NeaEmotionTestDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NeaEmotionTestDTO.java
+END
+NewsEmotionVolumeDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/svn/DataPlatform/!svn/ver/31340/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsEmotionVolumeDTO.java
+END
+NewsEmotionDataLogDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/DataPlatform/!svn/ver/31340/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsEmotionDataLogDTO.java
+END
+NewsVolumeDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsVolumeDTO.java
+END
+NewsDuplicateInfoSourceDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 184
+/svn/DataPlatform/!svn/ver/31563/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsDuplicateInfoSourceDTO.java
+END
+SearchDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/SearchDTO.java
+END
+NewsEmotionDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/DataPlatform/!svn/ver/31320/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsEmotionDTO.java
+END
+NewsWordDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsWordDTO.java
+END
+NewsDuplicateTotalDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/DataPlatform/!svn/ver/31166/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsDuplicateTotalDTO.java
+END
+NewsDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsDTO.java
+END
+NewsTrashDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsTrashDTO.java
+END
+NewsIndustryDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsIndustryDTO.java
+END
+NdrDuplicateTestDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NdrDuplicateTestDTO.java
+END
+NewsEmotionTitleFilterDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/DataPlatform/!svn/ver/31320/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsEmotionTitleFilterDTO.java
+END
+NewsFilterDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/dto/NewsFilterDTO.java
+END

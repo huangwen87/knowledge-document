@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd" >
+<mapper namespace="com.gw.ncps.respository.INdrManipulateDao">
+	
+	<insert id="addNewsTrashDTO"  parameterType="NewsTrashDTO">
+		<![CDATA[
+			insert into news_duprmv_dust(Sentence,`time`) values(#{trash},#{dateStr})
+		]]>	
+	</insert>
+	
+	<!-- 插入新词 -->
+	<insert id="addword"  parameterType="NewsWordDTO">
+		<![CDATA[
+			insert into news_duprmv_word(id,word,time) values(null,#{word},#{date})
+		]]>	
+	</insert>
+	
+	<!-- 插入情感歧义句子 -->
+	<insert id="addNewsEmotionDTO"  parameterType="NewsWordDTO">
+		<![CDATA[
+			insert into news_sentifilter_dust(Sentence,logtime) values(#{word},#{dateStr})
+		]]>	
+	</insert>
+	
+	
+    <!-- 插入情感标题样本 -->
+	<insert id="addNewsEmotionTitleDTO"  parameterType="NewsWordDTO">
+		<![CDATA[
+			insert into news_sentiment_title_filter_dust(Sentence,logtime) values(#{word},#{dateStr})
+		]]>	
+	</insert>
+	
+	
+	
+    <!-- 词样本查询语句 -->
+	<select id="queryMatch"  resultMap="common.NewsWordResult"  parameterType="SearchDTO">
+		select id,word,time from news_duprmv_word where 1=1
+        <include refid="queryMatch_filter_sql_word"/>
+	</select>
+
+	<select id="queryMatchCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+		select count(*) from news_duprmv_word where 1=1
+		<include refid="queryMatch_filter_sql_word"/> 
+	</select>
+	
+	<sql id="queryMatch_filter_sql_word">
+		order by time ${sortType}
+	</sql>
+	
+	<!--查询词库样本-->
+	<select id="queryword" resultType="int"  parameterType="NewsWordDTO">
+		<![CDATA[
+			 select count(*) from news_duprmv_word where word = #{wordStr}
+		]]>	
+	</select>
+		
+     <!-- 垃样本查询语句 -->
+	<select id="queryMatchTrash"  resultMap="common.NewsTrashAddResult"  parameterType="SearchDTO">
+		select id,Sentence,time from news_duprmv_dust where 1=1
+        <include refid="queryMatch_filter_sql_trash"/>
+	</select>
+
+	<select id="queryMatchTrashCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+		select count(*) from news_duprmv_dust where 1=1
+		<include refid="queryMatch_filter_sql_trash"/> 
+	</select>
+
+	<sql id="queryMatch_filter_sql_trash">
+		order by Id ${sortType}
+	</sql>
+	
+	
+	
+    <!-- 情感样本之内容查询语句 -->
+	<select id="queryMatchEmotion"  resultMap="common.NewsEmotionSampleResult"  parameterType="SearchDTO">
+		select id,Sentence,logtime from news_sentifilter_dust where 1=1
+        <include refid="queryMatch_filter_sql_emotion"/>
+	</select>
+
+	<select id="queryMatchEmotionCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+		select count(*) from news_sentifilter_dust where 1=1
+		<include refid="queryMatch_filter_sql_emotion"/> 
+	</select>
+
+	<sql id="queryMatch_filter_sql_emotion">
+		order by Id ${sortType}
+	</sql>
+	
+	
+	<!-- 情感样本之标题查询语句 -->
+	<select id="queryMatchEmotionContent"  resultMap="common.NewsEmotionSampleResult"  parameterType="SearchDTO">
+		select id,Sentence,logtime from news_sentiment_title_filter_dust where 1=1
+        <include refid="queryMatch_filter_sql_emotioncontent"/>
+	</select>
+
+	<select id="queryMatchEmotionContentCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+		select count(*) from news_sentiment_title_filter_dust where 1=1
+		<include refid="queryMatch_filter_sql_emotioncontent"/> 
+	</select>
+
+	<sql id="queryMatch_filter_sql_emotioncontent">
+		order by Id ${sortType}
+	</sql>
+	
+	
+    <delete id="delEmotionTitleSampleById">
+		delete from news_sentiment_title_filter_dust where id = #{id}
+	</delete>
+	
+	 <delete id="delEmotiontContentSampleById">
+		delete from news_sentifilter_dust where id = #{id}
+	</delete>
+	
+	
+	<delete id="delDuplicateRemovalSampleById">
+		delete from news_duprmv_dust where id = #{id}
+	</delete>
+	
+	<delete id="delWordLibById">
+		delete from news_duprmv_word where id = #{id}
+	</delete>
+	
+	
+</mapper>

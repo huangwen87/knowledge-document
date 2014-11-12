@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/DataPlatform/!svn/ver/31563/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/controller
+END
+NicIndustryController.java
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/controller/NicIndustryController.java
+END
+TestController.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/controller/TestController.java
+END
+NdrMatchController.java
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/DataPlatform/!svn/ver/31563/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/controller/NdrMatchController.java
+END
+NeaPostiveNegativeController.java
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/DataPlatform/!svn/ver/31340/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/controller/NeaPostiveNegativeController.java
+END
+LogController.java
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/controller/LogController.java
+END
+AjaxController.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/controller/AjaxController.java
+END
+NdrManipulateController.java
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/controller/NdrManipulateController.java
+END
+MainController.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/controller/MainController.java
+END
+NdrFilterController.java
+K 25
+svn:wc:ra_dav:version-url
+V 184
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/controller/NdrFilterController.java
+END

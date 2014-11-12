@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd" >
+<mapper namespace="com.gw.ncps.respository.INeaManipulateDao">
+
+    <select id="queryContentById"  resultType = "java.lang.String"  parameterType="String"  >
+		<![CDATA[
+			select text from news_senana_predict where id=#{o}
+		]]>	
+	</select>
+	
+    <select id="queryNewsById"  resultType = "java.lang.String"  parameterType="String"  >
+		<![CDATA[
+			select text from news_sentiment_test_samples where newscode=#{o}
+		]]>	
+	</select>
+	
+    <select id="queryWeiboById"  resultType = "java.lang.String"  parameterType="String"  >
+		<![CDATA[
+			select text from weibo_sentiment_test_samples where newscode=#{o}
+		]]>	
+	</select>
+
+
+	<select id="queryWeibo"  resultMap="common.NewsEmotionResult"  parameterType="SearchDTO">
+	<![CDATA[
+		select newscode id, title, publishdate, sentiment,classify, `date` logtime,organization from weibo_sentiment_test_samples a where  1=1
+		]]>	
+		<include refid="queryWeibo_filter_sql"/> 
+	</select>
+
+	<select id="queryWeiboCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+	<![CDATA[
+		select count(*) from weibo_sentiment_test_samples a  where  1=1
+		]]>	
+		<include refid="queryWeibo_filter_sql"/> 
+	</select>
+	
+   <sql id="queryWeibo_filter_sql">
+        <if test="!(obj.title==null||obj.title=='')">
+			and title = #{obj.title}
+		</if>
+        <if test="!(obj.posORneg==null||obj.posORneg=='')">
+			and sentiment =  #{obj.posORneg}
+		</if>
+		<if test="!(obj.classify==null||obj.classify=='')">
+			and classify = #{obj.classify}
+		</if>
+		<if test="!(obj.organization==null||obj.organization=='')">
+			and organization = #{obj.organization}
+		</if>
+		<if test="!(obj.date==null||obj.date=='')">
+		<![CDATA[
+			and `date` >= #{obj.date}
+			and `date` < DATE(DATE_ADD(#{obj.date}, INTERVAL 1 DAY))
+			]]>	
+		</if>
+		<if test="!(obj.publishdate==null||obj.publishdate=='')">
+		<![CDATA[
+			and `publishdate` >= #{obj.publishdate}
+			and `publishdate` < DATE(DATE_ADD(#{obj.publishdate}, INTERVAL 1 DAY))
+			]]>	
+		</if>
+		<if test="!(obj.ids==null||obj.ids=='')">
+			and newscode in
+			<foreach collection="obj.ids" index="index" item="item" open="(" separator="," close=")">
+	            #{item}
+	        </foreach> 
+		</if>
+		<if test="sortKey=='timestamp'||sortKey==null||sortKey==''">order by `date` ${sortType}</if>
+		<if test="sortKey=='publishdate'||sortKey==null||sortKey==''">order by `publishdate` ${sortType}</if>
+		<if test="sortKey=='id'">order by a.id ${sortType}</if>
+		<if test="sortKey=='title'">order by title ${sortType}</if>
+		<if test="sortKey=='organization'">order by organization ${sortType}</if>
+	</sql>
+	
+	<select id="queryFilter"  resultMap="common.NewsEmotionResult"  parameterType="SearchDTO">
+	<![CDATA[
+		select a.id, title, sentiment, logtime from news_senana_predict a where  sentiment=-1
+		]]>	
+		<include refid="queryFilter_filter_sql"/> 
+	</select>
+
+	<select id="queryFilterCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+	<![CDATA[
+		select count(*) from news_senana_predict a where sentiment=-1
+		]]>	
+		<include refid="queryFilter_filter_sql"/> 
+	</select>
+	
+   <sql id="queryFilter_filter_sql">
+        <if test="!(obj.title==null||obj.title=='')">
+			and title = #{obj.title}
+		</if>
+		<if test="!(obj.posORneg==null||obj.posORneg=='')">
+			and sentiment = #{obj.posORneg}
+		</if>
+		<if test="!(obj.date==null||obj.date=='')">
+		<![CDATA[
+			and logtime >= #{obj.date}
+			and logtime < DATE(DATE_ADD(#{obj.date}, INTERVAL 1 DAY))
+			]]>	
+		</if>
+		<if test="!(obj.ids==null||obj.ids=='')">
+			and a.id in
+			<foreach collection="obj.ids" index="index" item="item" open="(" separator="," close=")">
+	            #{item}
+	        </foreach> 
+		</if>
+		<if test="sortKey=='timestamp'||sortKey==null||sortKey==''">order by logtime ${sortType}</if>
+		<if test="sortKey=='id'">order by a.id ${sortType}</if>
+		<if test="sortKey=='posORneg'">order by sentiment ${stType}</if>
+		<if test="sortKey=='title'">order by title ${sortType}</if>
+	</sql>
+	
+	<select id="queryNews"  resultMap="common.NewsEmotionResult"  parameterType="SearchDTO">
+	<![CDATA[
+		select a.newscode ,publishdate ,title, sentiment,classify, `date` logtime,organization from news_sentiment_test_samples a where  1 =1
+		]]>	
+		<include refid="queryNews_filter_sql"/> 
+	</select>
+
+	<select id="queryNewsCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+	<![CDATA[
+		select count(*) from news_sentiment_test_samples a where  1 =1
+		]]>	
+		<include refid="queryNews_filter_sql"/> 
+	</select>
+	
+   <sql id="queryNews_filter_sql">
+        <if test="!(obj.title==null||obj.title=='')">
+			and title = #{obj.title}
+		</if>
+		<if test="!(obj.posORneg==null||obj.posORneg=='')">
+			and sentiment =  #{obj.posORneg}
+		</if>
+		<if test="!(obj.classify==null||obj.classify=='')">
+			and classify = #{obj.classify}
+		</if>
+		<if test="!(obj.organization==null||obj.organization=='')">
+			and organization = #{obj.organization}
+		</if>
+		<if test="!(obj.date==null||obj.date=='')">
+		<![CDATA[
+			and `date` >= #{obj.date}
+			and `date` < DATE(DATE_ADD(#{obj.date}, INTERVAL 1 DAY))
+			]]>	
+		</if>
+		<if test="!(obj.publishdate==null||obj.publishdate=='')">
+		<![CDATA[
+			and `publishdate` >= #{obj.publishdate}
+			and `publishdate` < DATE(DATE_ADD(#{obj.publishdate}, INTERVAL 1 DAY))
+			]]>	
+		</if>
+		<if test="!(obj.ids==null||obj.ids=='')">
+			and newscode in
+			<foreach collection="obj.ids" index="index" item="item" open="(" separator="," close=")">
+	            #{item}
+	        </foreach> 
+		</if>
+		<if test="sortKey=='timestamp'||sortKey==null||sortKey==''">order by `date` ${sortType}</if>
+		<if test="sortKey=='publishdate'||sortKey==null||sortKey==''">order by `publishdate` ${sortType}</if>
+		<if test="sortKey=='id'">order by a.id ${sortType}</if>
+		<if test="sortKey=='title'">order by title ${sortType}</if>
+		<if test="sortKey=='organization'">order by organization ${sortType}</if>
+	</sql>
+	
+    <!-- 查询行业名称-新闻 -->
+	<select id="queryNewsClassifyName"  resultType = "java.lang.String">
+		<![CDATA[
+			select distinct classify from news_sentiment_test_samples
+		]]>	
+	</select>
+	
+	<select id="queryIndustry"  resultMap="common.NewsEmotionResult"  parameterType="SearchDTO">
+	<![CDATA[
+		select a.id, title, sentiment, result,classname classify,company organization,logtime from news_senana_indcls a where  sentiment=-1
+		]]>	
+		<include refid="queryIndustry_filter_sql"/> 
+	</select>
+
+	<select id="queryIndustryCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+	<![CDATA[
+		select count(*) from news_senana_indcls a where sentiment=-1
+		]]>	
+		<include refid="queryIndustry_filter_sql"/> 
+	</select>
+	
+   <sql id="queryIndustry_filter_sql">
+        <if test="!(obj.title==null||obj.title=='')">
+			and title = #{obj.title}
+		</if>
+		<if test="!(obj.posORneg==null||obj.posORneg=='')">
+			and sentiment = #{obj.posORneg}
+		</if>
+		<if test="!(obj.date==null||obj.date=='')">
+		<![CDATA[
+			and logtime >= #{obj.date}
+			and logtime < DATE(DATE_ADD(#{obj.date}, INTERVAL 1 DAY))
+			]]>	
+		</if>
+		<if test="!(obj.ids==null||obj.ids=='')">
+			and a.id in
+			<foreach collection="obj.ids" index="index" item="item" open="(" separator="," close=")">
+	            #{item}
+	        </foreach> 
+		</if>
+		<if test="!(obj.classify==null||obj.classify=='')">
+            and classname like CONCAT('%',#{obj.classify},'%')
+		</if>
+		<if test="sortKey=='timestamp'||sortKey==null||sortKey==''">order by logtime ${sortType}</if>
+		<if test="sortKey=='id'">order by a.id ${sortType}</if>
+		<if test="sortKey=='posORneg'">order by sentiment ${stType}</if>
+		<if test="sortKey=='title'">order by title ${sortType}</if>
+	</sql>
+	
+	
+	<!-- 查找下拉框类别  根据type来区别查询的内容 -->
+	<select id="queryPosOrNegClassifyName"  resultMap = "common.NewsDictionaryResult"  parameterType="String">
+		<![CDATA[
+			select id, name from dictionary_industry_classify where type=#{o}
+		]]>	
+	</select>
+	
+	
+	<!-- 查询情感标题过滤新闻 -->
+	
+	<select id="queryTitleFilterNews"  resultMap="common.NewsEmotionTitleFilterResult"  parameterType="SearchDTO">
+	<![CDATA[
+		select newsCode, result, publishdate, classNameList, title, companyNames, isFiltered, source, logtime from news_senana_filtered a where 1=1
+		]]>	
+		<include refid="queryTitleFilterNews_filter_sql"/> 
+	</select>
+
+	<select id="queryTitleFilterNewsCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+	<![CDATA[
+		select count(*) from news_senana_filtered a where 1=1
+		]]>	
+		<include refid="queryTitleFilterNews_filter_sql"/> 
+	</select>
+	
+   <sql id="queryTitleFilterNews_filter_sql">
+        <if test="!(obj.title==null||obj.title=='')">
+			and title = #{obj.title}
+		</if>
+		<if test="!(obj.isfilter==null||obj.isfilter=='')">
+			and isFiltered = #{obj.isfilter}
+		</if>
+		<if test="!(obj.date==null||obj.date=='')">
+		<![CDATA[
+			and logtime >= #{obj.date}
+			and logtime < DATE(DATE_ADD(#{obj.date}, INTERVAL 1 DAY))
+			]]>	
+		</if>
+		<if test="!(obj.publishdate==null||obj.publishdate=='')">
+		<![CDATA[
+			and `publishdate` >= #{obj.publishdate}
+			and `publishdate` < DATE(DATE_ADD(#{obj.publishdate}, INTERVAL 1 DAY))
+			]]>	
+		</if>
+		<if test="!(obj.ids==null||obj.ids=='')">
+			and newsCode in
+			<foreach collection="obj.ids" index="index" item="item" open="(" separator="," close=")">
+	            #{item}
+	        </foreach> 
+		</if>
+		<if test="!(obj.classify==null||obj.classify=='')">
+			and classNameList = #{obj.classify}
+		</if>
+	    <if test="!(obj.source==null||obj.source=='')">
+			and source = #{obj.source}
+		</if>
+		<if test="sortKey=='timestamp'||sortKey==null||sortKey==''">order by logtime ${sortType}</if>
+		<if test="sortKey=='publishdate'||sortKey==null||sortKey==''">order by `publishdate` ${sortType}</if>
+		<if test="sortKey=='id'">order by newsCode ${sortType}</if>
+		<if test="sortKey=='classify'">order by classNameList ${sortType}</if>
+		<if test="sortKey=='title'">order by title ${sortType}</if>
+	</sql>
+	
+	<select id="queryFilterNewsById"  resultType = "java.lang.String"  parameterType="String"  >
+		<![CDATA[
+			select content from news_senana_filtered where newsCode=#{o}
+		]]>	
+	</select>
+	
+	
+	<!-- 情感 数据实时日志查询 -->
+	<select id="queryDataLog"  resultMap="common.NewsSentimentFlowTotalResult"  parameterType="SearchDTO">
+	<![CDATA[
+		select newsid, newscode, timein, timeout from news_sentiment_flow_total  where 1=1
+		]]>	
+		<include refid="queryDataLog_filter_sql"/> 
+	</select>
+
+	<select id="queryDataLogCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+	<![CDATA[
+		select count(*) from news_sentiment_flow_total a where 1=1
+		]]>	
+		<include refid="queryDataLog_filter_sql"/> 
+	</select>
+	
+	<sql id="queryDataLog_filter_sql">
+		<if test="!(obj.date==null||obj.date=='')">
+		<![CDATA[
+			and timein >= #{obj.date}
+			and timein < DATE(DATE_ADD(#{obj.date}, INTERVAL 1 DAY))
+			]]>	
+		</if>
+		<if test="!(obj.ids==null||obj.ids=='')">
+			and newsCode in
+			<foreach collection="obj.ids" index="index" item="item" open="(" separator="," close=")">
+	            #{item}
+	        </foreach> 
+		</if>
+		<if test="sortKey=='newsID'">order by newsid ${sortType}</if>
+		<if test="sortKey=='newsCode'">order by newscode ${sortType}</if>
+		<if test="sortKey=='timeIn'||sortKey==null||sortKey==''">order by `timein` ${sortType}</if>
+		<if test="sortKey=='timeOut'||sortKey==null||sortKey==''">order by `timeout` ${sortType}</if>
+
+	</sql>
+	
+	
+	<!-- 情感流入-流出量查询 -->
+	<select id="queryVolume"  resultMap="common.NewsSentimentVolumeResult"  parameterType="SearchDTO">
+	    <![CDATA[
+		select count(*) outflow from news_sentiment_flow_total  where 1=1 and timeout is not null
+		]]>	
+		<include refid="queryVolume_filter_sql"/> 
+	</select>
+
+	<select id="queryVolumeCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+	    <![CDATA[
+		select count(*)/(count(*)) from news_sentiment_flow_total
+		
+		]]>	
+	</select>
+	
+    <sql id="queryVolume_filter_sql">
+		<if test="!(obj.startID==null||obj.startID=='')">
+		<![CDATA[
+			and newsid > #{obj.startID}
+			]]>	
+		</if>
+		<if test="!(obj.endID==null||obj.endID=='')">
+		<![CDATA[
+			and newsid < #{obj.endID}
+			]]>	
+		</if>
+	</sql>
+	
+	
+	
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC  "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties>
+		<property name="dialect" value="mysql"/>
+	</properties>
+	<typeAliases>
+		<package name="com.gw.ncps.dto"/>
+		<package name="com.gw.ncps.model"/>
+	</typeAliases>
+	<plugins>
+		<plugin interceptor="com.gw.ncps.common.interceptor.PaginationInterceptor">
+		</plugin>
+	</plugins>
+	<mappers>
+		<mapper resource="mybatis/common.xml" />
+		<mapper resource="mybatis/ndrmanipulate.xml" />
+		<mapper resource="mybatis/nicmanipulate.xml" />
+		<mapper resource="mybatis/neamanipulate.xml" />
+		<mapper resource="mybatis/NewsDuplicateRemoval.xml" />
+	</mappers>
+
+</configuration>	

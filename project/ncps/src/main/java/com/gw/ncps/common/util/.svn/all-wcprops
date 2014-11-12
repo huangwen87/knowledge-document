@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/DataPlatform/!svn/ver/31563/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/common/util
+END
+LogUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/common/util/LogUtil.java
+END
+Utils.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/common/util/Utils.java
+END
+DropDownDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/common/util/DropDownDTO.java
+END
+StringUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/common/util/StringUtil.java
+END
+UUIDUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/common/util/UUIDUtil.java
+END
+JsonUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/common/util/JsonUtil.java
+END
+Encryption.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/common/util/Encryption.java
+END
+Sha1Util.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/common/util/Sha1Util.java
+END
+DateUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/DataPlatform/!svn/ver/31563/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/common/util/DateUtil.java
+END
+RegExtUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/common/util/RegExtUtil.java
+END
+ConvertUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/common/util/ConvertUtil.java
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/DataPlatform/!svn/ver/31563/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/spring
+END
+spring-ndr-manipulate.xml
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/spring/spring-ndr-manipulate.xml
+END
+spring-nea-manipulate.xml
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/spring/spring-nea-manipulate.xml
+END
+spring-task.xml
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/DataPlatform/!svn/ver/31563/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/spring/spring-task.xml
+END
+spring-sqlserver-manipulate.xml
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/DataPlatform/!svn/ver/31340/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/spring/spring-sqlserver-manipulate.xml
+END
+spring-nic-manipulate.xml
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/spring/spring-nic-manipulate.xml
+END
+spring-login.xml
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/spring/spring-login.xml
+END
+spring-newsduplicateremoval.xml
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/spring/spring-newsduplicateremoval.xml
+END

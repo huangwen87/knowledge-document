@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/DataPlatform/!svn/ver/31796/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources
+END
+c3p0.properties
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/DataPlatform/!svn/ver/31340/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/c3p0.properties
+END
+filter.properties
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/filter.properties
+END
+mylog4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/DataPlatform/!svn/ver/31133/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/mylog4j.properties
+END
+spring.xml
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/DataPlatform/!svn/ver/31340/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/spring.xml
+END
+mybatis.xml
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/mybatis.xml
+END
+mybatis-sqlserver.xml
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/DataPlatform/!svn/ver/31340/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/resources/mybatis-sqlserver.xml
+END

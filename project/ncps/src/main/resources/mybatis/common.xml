@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd" >
+<mapper namespace="common">
+	<resultMap id="NewsStatisResult" type="NewsStatis">
+		<id property="id" column="id"/>
+		<result property="newsnum" column="newsnum"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsVelocityResult" type="NewsVelocity">
+		<id property="id" column="id"/>
+		<result property="velocity" column="velocity"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsRatioResult" type="NewsRatio">
+		<id property="id" column="id"/>
+		<result property="ratio" column="ratio"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsTrashResult" type="NewsTrash">
+		<id property="id" column="id"/>
+		<result property="trash" column="trash"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsFilterResult" type="NewsFilter">
+		<result property="filterId" column="id"/>
+		<result property="originId" column="id2"/>
+		<result property="content" column="text"/>
+		<result property="timestamp" column="time"/>
+		<result property="isdup" column="isdup"/>
+		<result property="istrash" column="isdust"/>
+		<result property="iscd" column="iscd"/>
+		<result property="title" column="title"/>
+		<result property="timeIn" column="timein"/>
+		<result property="timeOut" column="timeout"/>
+		<result property="groupName" column="group_name"/>
+		<result property="siteName" column="site_name"/>
+		<result property="webgrab" column="webgrab"/>
+	</resultMap>
+	
+	<resultMap id="NewsMatchResult" type="NewsMatch">
+		<result property="matchId" column="id"/>
+		<result property="organCode" column="itcode"/>
+		<result property="content" column="itname"/>
+		<result property="timestamp" column="time"/>
+		<result property="timeIn" column="timein"/>
+		<result property="timeOut" column="timeout"/>
+	</resultMap>
+	
+	<!-- 五条线查询结果集  -->
+	<resultMap id="NewsDustResult" type="NewsDust">
+		<id property="id" column="id"/>
+		<result property="timedust" column="timedust"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsShingleResult" type="NewsShingle">
+		<id property="id" column="id"/>
+		<result property="timeshingle" column="timeshingle"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsShinglingResult" type="NewsShingling">
+		<id property="id" column="id"/>
+		<result property="timeshingling" column="timeshingling"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	<resultMap id="NewsSimhashResult" type="NewsSimhash">
+		<id property="id" column="id"/>
+		<result property="timesimhash" column="timesimhash"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	<resultMap id="NewsWeightResult" type="NewsWeight">
+		<id property="id" column="id"/>
+		<result property="weight" column="timeweight"/>
+		<result property="timestamp" column="timestamp"/>
+	</resultMap>
+	
+	
+	<!-- 样本查询集 -->
+	<resultMap id="NewsWordResult" type="NewsWord">
+		<result property="id" column="id"/>
+		<result property="word" column="word"/>
+		<result property="timestamp" column="time"/>
+	</resultMap>
+	
+	<resultMap id="NewsEmotionSampleResult" type="NewsWord">
+		<result property="id" column="id"/>
+		<result property="word" column="sentence"/>
+		<result property="timestamp" column="logtime"/>
+	</resultMap>
+	
+	<resultMap id="NewsTrashAddResult" type="NewsTrash2">
+		<id property="id" column="id"/>
+		<result property="trash" column="sentence"/>
+		<result property="timestamp" column="time"/>
+	</resultMap>
+	
+	<!--行业分类查询集 -->
+	<resultMap id="NewsIndustryResult" type="NewsIndustry">
+		<result property="id" column="id"/>
+		<result property="title" column="title"/>
+		<result property="value" column="result"/>
+		<result property="industry" column="classname"/>
+		<result property="timestamp" column="logtime"/>
+	</resultMap>
+	
+	
+	<!--情感查询集 -->
+	<resultMap id="NewsEmotionResult" type="NewsEmotion">
+		<result property="id" column="newscode"/>
+		<result property="title" column="title"/>
+		<result property="posORneg" column="sentiment"/>
+		<result property="classify" column="classify"/>
+		<result property="organization" column="organization"/>
+		<result property="result" column="result"/>
+		<result property="publishdate" column="publishdate"/>
+		<result property="timestamp" column="logtime"/>
+	</resultMap>
+	
+	<!--行业分类查询集2 -->
+	<resultMap id="NicSampleResult" type="NicSample">
+		<result property="id" column="id"/>
+		<result property="title" column="title"/>
+		<result property="news" column="news"/>
+		<result property="industry" column="industry"/>
+	</resultMap>
+	
+	<!-- 指纹结果集 -->
+	<resultMap id="NewsFigerPrintsResult" type="NewsFigerPrints">
+		<id property="id" column="id"/>
+		<result property="log" column="log"/>
+		<result property="timestamp" column="times"/>
+	</resultMap>
+	
+	
+	<!--标题新闻过滤结果集 -->
+	<resultMap id="NewsEmotionTitleFilterResult" type="NewsEmotionTitleFilter">
+		<result property="id" column="newsCode"/>
+		<result property="title" column="title"/>
+		<result property="result" column="result"/>
+		<result property="classify" column="classNameList"/>
+		<result property="organization" column="companyNames"/>
+		<result property="isfilter" column="isFiltered"/>
+		<result property="source" column="source"/>
+		<result property="timestamp" column="logtime"/>
+		<result property="publishdate" column="publishdate"/>
+	</resultMap>
+	
+	
+    <!--下拉框结果集 -->
+	<resultMap id="NewsDictionaryResult" type="NewsDictionary">
+		<result property="id" column="id"/>
+		<result property="name" column="name"/>
+	</resultMap>
+	
+		
+    <!--流入量结果集 -->
+	<resultMap id="NewsVolumeInResult" type="NewsVolume">
+		<result property="inflow" column="inflow"/>
+	</resultMap>
+	
+	<!--流出量结果集 -->
+	<resultMap id="NewsVolumeOutResult" type="NewsVolume">
+		<result property="outflow" column="outflow"/>
+	</resultMap>
+	
+	<!-- 垃圾结果集 -->
+	<resultMap  id="NewsStageDustResult" type="NewsStageDust">
+	     <result property="sum" column="sum"/>
+	     <result property="containDust" column="containDust"/>
+	     <result property="pureDust" column="pureDust"/>
+	</resultMap>
+	
+    <!-- 去重数量集 -->
+	<resultMap  id="NewsDupTotalResult" type="NewsDupTotal">
+	     <result property="id" column="id"/>
+	     <result property="count" column="count"/>
+	     <result property="timestamp" column="time"/>
+	</resultMap>
+	
+	<!-- 情感数据实时日志  -->
+	<resultMap  id="NewsSentimentFlowTotalResult" type="NewsSentimentFlowTotal">
+	     <result property="newsID" column="newsid"/>
+	     <result property="newsCode" column="newscode"/>
+	     <result property="timeIn" column="timein"/>
+	     <result property="timeOut" column="timeout"/>
+	</resultMap>
+	
+	<!-- 情感流入、流出量结果集 -->
+	<resultMap  id="NewsSentimentVolumeResult" type="NewsSentimentVolume">
+	     <result property="inflow" column="inflow"/>
+	     <result property="outflow" column="outflow"/>
+	</resultMap>
+	
+    <!--  信息源之去重量、包流量结果集 -->
+	<resultMap  id="NewsInfoSourceDuplicateRatioResult" type="NewsInfoSourceDuplicateRatio">
+	     <result property="duplicateCount" column="duplicateCount"/>
+	     <result property="reserveCount" column="reserveCount"/>
+	</resultMap>
+	
+	
+	<!-- 精简后的新闻结果集 -->
+	<resultMap id="NewsFilterSimplifyResult" type="NewsFilterSimplify">
+		<result property="isdup"     column="isdup"/>
+		<result property="groupName" column="group_name"/>
+		<result property="siteName"  column="site_name"/>
+		<result property="channel"   column="channel"/>
+		<result property="trssource" column="trssource"/>
+		<result property="dustflag"  column="dustflag"/>
+		<result property="autoid"    column="autoid"/>
+		<result property="time"      column="time"/>
+	</resultMap>
+	
+	
+	
+</mapper>

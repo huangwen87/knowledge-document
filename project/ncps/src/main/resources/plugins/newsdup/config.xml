@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<file_dir>
+		<ictclas_dir>C:\\Users\\ding\\workspace_j2ee\\NewsDup</ictclas_dir>
+		<userdict>C:\\Users\\ding\\workspace_j2ee\\NewsDup\\userdict.txt</userdict>
+		<dust_dir>C:\\Users\\ding\\workspace_j2ee\\NewsDup\\dust_data_DelRedup.txt</dust_dir>
+	</file_dir>
+
+	<mysql_bayes>
+		<dirClass>com.mysql.jdbc.Driver</dirClass>
+		<dbUrl>jdbc:mysql://10.15.89.178:3306/ncps</dbUrl>
+		<user>root</user>
+		<password>111111</password>
+		<table_dust>news_duprmv_dust</table_dust>
+		<table_notdust>news_duprmv_notdust</table_notdust>
+		<table_map_log_P_C>news_duprmv_logpc</table_map_log_P_C>
+		<table_map_log_P_D>news_duprmv_logpd</table_map_log_P_D>
+		<table_log_P_CD>news_duprmv_logpcd</table_log_P_CD>
+	</mysql_bayes>
+	
+	<redis_tfidf>
+		<flag>false</flag>
+		<ip>10.15.107.75</ip>
+		<port>6379</port>
+		<db>15</db>
+	</redis_tfidf>
+
+	<jedisMap>
+		<list_len>1000</list_len>
+		<num_delete>100000</num_delete>
+		<num_max>500000</num_max>
+		<ip>10.15.107.75</ip>
+		<port>6379</port>
+		<db>10</db>
+		<redis_timeout>172800</redis_timeout>
+		<redis_num_max>800000</redis_num_max>
+	</jedisMap>
+	
+	<shingle>
+		<num_delete>20000</num_delete>
+		<num_max>100000</num_max>
+	</shingle>
+	
+	<shingling>
+		<num_delete>30000</num_delete>
+		<num_max>130000</num_max>
+		<shingling_num>84</shingling_num>
+		<shingling_num_same>42</shingling_num_same>
+	</shingling>
+</database>
+

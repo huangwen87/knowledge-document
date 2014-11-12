@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- Scans the classpath of this application for @Components to deploy as beans -->
+	<context:component-scan base-package="com.gw" />
+
+	<!-- Configures the @Controller programming model -->
+	<mvc:annotation-driven />
+	<!-- Activates various annotations to be detected in bean classes: Spring's @Required and @Autowired, JSR 250's  @Resource (if available)... -->
+	<context:annotation-config />
+	
+	<!-- Forwards requests to the "/" resource to the view -->
+	<mvc:view-controller path="/" view-name="login/chlogin"/>
+
+	<!-- Configures Handler Interceptors -->	
+	<mvc:interceptors>
+		<!-- Changes the locale when a 'locale' request parameter is sent; e.g. /?locale=de -->
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+	</mvc:interceptors>
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources/ directory -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Saves a locale change using a cookie -->
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />
+
+	<!-- Application Message Bundle -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="/WEB-INF/messages/messages" />
+		<property name="cacheSeconds" value="0" />
+	</bean>
+
+	<!-- Resolves view names to protected .jsp resources within the /WEB-INF/views directory -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<!-- 数据源属性配置文件 -->
+	<context:property-placeholder location="classpath:c3p0.properties" />
+	
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="jdbcUrl" value="${c3p0.jdbcUrl}"/>		
+		<property name="driverClass" value="${c3p0.driverClass}"/>		
+		<property name="user" value="${c3p0.user}"/>		
+		<property name="password" value="${c3p0.password}"/>		
+		<property name="acquireIncrement" value="${c3p0.acquireIncrement}"/>		
+		<property name="idleConnectionTestPeriod" value="${c3p0.idleConnectionTestPeriod}"/>		
+		<property name="initialPoolSize" value="${c3p0.initialPoolSize}"/>		
+		<property name="maxIdleTime" value="${c3p0.maxIdleTime}"/>		
+		<property name="maxPoolSize" value="${c3p0.maxPoolSize}"/>		
+		<property name="maxStatements" value="${c3p0.maxStatements}"/>		
+		<property name="minPoolSize" value="${c3p0.minPoolSize}"/>		
+	</bean>
+
+	<!-- myBatis文件 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:mybatis.xml" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="dataSource-1" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="jdbcUrl" value="${sqlserver1.jdbcUrl}"/>		
+		<property name="driverClass" value="${sqlserver1.driverClass}"/>		
+		<property name="user" value="${sqlserver1.user}"/>		
+		<property name="password" value="${sqlserver1.password}"/>		
+		<property name="acquireIncrement" value="${sqlserver1.acquireIncrement}"/>		
+		<property name="idleConnectionTestPeriod" value="${sqlserver1.idleConnectionTestPeriod}"/>		
+		<property name="initialPoolSize" value="${sqlserver1.initialPoolSize}"/>		
+		<property name="maxIdleTime" value="${sqlserver1.maxIdleTime}"/>		
+		<property name="maxPoolSize" value="${sqlserver1.maxPoolSize}"/>		
+		<property name="maxStatements" value="${sqlserver1.maxStatements}"/>		
+		<property name="minPoolSize" value="${sqlserver1.minPoolSize}"/>		
+	</bean>
+	<!-- myBatis文件 -->
+	<bean id="sqlSessionFactory-1" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:mybatis-sqlserver.xml" />
+		<property name="dataSource" ref="dataSource-1" />
+	</bean>
+	
+	<bean id="sqlSession-1" class="org.mybatis.spring.SqlSessionTemplate">
+            <constructor-arg index="0" ref="sqlSessionFactory-1" />
+    </bean> 
+    
+	
+    <!-- 配置jmsTemplate -->
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="poolFactory" />
+		<property name="defaultDestinationName" value="myTopic.develop" />
+		<!-- 区别它采用的模式为false是p2p为true是订阅-->
+		<property name="pubSubDomain" value="true" />
+	</bean> 
+	
+	<!-- 配置activemq连接池 -->
+	<bean id="poolFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+		<property name="connectionFactory" ref="amqConnectionFactory" />
+		<property name="maxConnections" value="100" />
+	</bean>
+
+	<!-- 配置activemq连接 -->
+	<bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="tcp://10.15.107.75:61616" />
+	</bean>
+
+	<bean id="topicDestination2" class="org.apache.activemq.command.ActiveMQTopic">
+		<constructor-arg index="0" value="myTopic.ncps" />
+	</bean>
+	
+</beans>

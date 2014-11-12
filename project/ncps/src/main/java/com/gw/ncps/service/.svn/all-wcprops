@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/DataPlatform/!svn/ver/31563/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/service
+END
+INewsPostiveNegativeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 189
+/svn/DataPlatform/!svn/ver/31340/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/service/INewsPostiveNegativeService.java
+END
+INewsIndustryClassifyService.java
+K 25
+svn:wc:ra_dav:version-url
+V 190
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/service/INewsIndustryClassifyService.java
+END
+INewsDuplicateRemovalService.java
+K 25
+svn:wc:ra_dav:version-url
+V 190
+/svn/DataPlatform/!svn/ver/31563/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/service/INewsDuplicateRemovalService.java
+END
+INdrManipulateService.java
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/DataPlatform/!svn/ver/31132/SourceCodeNew/NewsBackgroundSystem/NewsBackground/trunk/Copy%20of%20ncps%20Maven%20Webapp/src/main/java/com/gw/ncps/service/INdrManipulateService.java
+END

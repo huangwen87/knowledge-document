@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<mysql>
+		<DriverClass>com.mysql.jdbc.Driver</DriverClass>
+		<JdbcUrl>jdbc:mysql://10.15.89.178:3306/ncps?autoReconnect=true</JdbcUrl>
+		<User>root</User>
+		<Password>111111</Password>
+		<MinPoolSize>2</MinPoolSize>
+		<MaxPoolSize>100</MaxPoolSize>
+	</mysql>
+</database>

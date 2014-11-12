@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd" >
+<mapper namespace="com.gw.ncps.respository.INewsDuplicateRemovalDao">
+	<!-- 通过过滤ID查询新闻内容 -->
+	<select id="queryContentById"  resultType = "java.util.Map"  parameterType="String"  >
+		<![CDATA[
+			select text from news_duprmv_content where id=#{o}
+		]]>	
+	</select>
+	
+	<!-- 通过过滤ID查询垃圾内容 -->
+	<select id="queryDustById"  resultType = "java.util.Map"  parameterType="String"  >
+		<![CDATA[
+			select dust from news_duprmv_content where id=#{o}
+		]]>	
+	</select>
+	
+	<!-- 通过多个条件查询过滤详情 -->
+	<select id="queryFilter"  resultMap="common.NewsFilterResult"  parameterType="SearchDTO">
+		select id,id2,time,isdup,isdust,iscd,title,timein,timeout,timedesc,channel,group_name,site_name,webgrab from news_duprmv_content where 1=1
+        <include refid="queryFilter_filter_sql"/>
+	</select>
+	<!-- 通过多个条件查询过滤总数 -->
+	<select id="queryFilterCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+		select count(*) from news_duprmv_content where 1=1
+		<include refid="queryFilter_filter_sql"/> 
+	</select>
+	<!-- 通过多个条件查询过滤条件 -->
+	<sql id="queryFilter_filter_sql">
+		<if test="!(obj.isdup==null||obj.isdup=='')">
+			and isdup = #{obj.isdup}
+		</if>
+		<if test="!(obj.title==null||obj.title=='')">
+			and title = #{obj.title}
+		</if>
+		<if test="!(obj.isdust==null||obj.isdust=='')">
+			and isdust = #{obj.isdust}
+		</if>
+		<if test="!(obj.date==null||obj.date=='')">
+		<![CDATA[
+			and time >= #{obj.date}
+			and time < DATE(DATE_ADD(#{obj.date}, INTERVAL 1 DAY))
+			]]>	
+		</if>
+		<if test="!(obj.ids==null||obj.ids=='')">
+			and id in
+			<foreach collection="obj.ids" index="index" item="item" open="(" separator="," close=")">
+	            #{item}
+	        </foreach> 
+		</if>
+		<if test="sortKey=='timestamp'||sortKey==null||sortKey==''">order by time ${sortType}</if>
+		<if test="sortKey=='filterId'">order by id ${sortType}</if>
+		<if test="sortKey=='originId'">order by id2 ${sortType}</if>
+		<if test="sortKey=='isdup'">order by isdup ${sortType}</if>
+		<if test="sortKey=='istrash'">order by isdust ${sortType}</if>
+		<if test="sortKey=='title'">order by title ${sortType}</if>
+		<if test="sortKey=='timeIn'">order by timein ${sortType}</if>
+		<if test="sortKey=='timeOut'">order by timeout ${sortType}</if>
+		<if test="sortKey=='timedesc'">order by timedesc ${sortType}</if>
+		<if test="sortKey=='webgrab'">order by webgrab ${sortType}</if>
+	</sql>
+	
+	<!-- 通过多个条件查询代码匹配详情 -->
+	<select id="queryMatch"  resultMap="common.NewsMatchResult"  parameterType="SearchDTO">
+		select id,itname,itcode,time,timein,timeout  from news_duprmv_codematch where 1=1
+        <include refid="queryMatch_filter_sql"/>
+	</select>
+	<!-- 通过多个条件查询代码匹配总数 -->
+	<select id="queryMatchCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+		select count(*) from news_duprmv_codematch where 1=1
+		<include refid="queryMatch_filter_sql"/> 
+	</select>
+	<!-- 通过多个条件查询代码匹配条件 -->
+	<sql id="queryMatch_filter_sql">
+		<if test="!(obj.content==null||obj.content=='')">
+			and itname = #{obj.content}
+		</if>
+		<if test="!(obj.organCode==null||obj.organCode=='')">
+			and itcode = #{obj.organCode}
+		</if>
+		<if test="!(obj.date==null||obj.date=='')">
+		<![CDATA[
+			and time >= #{obj.date}
+			and time < DATE(DATE_ADD(#{obj.date}, INTERVAL 1 DAY))
+			]]>	
+		</if>
+		<if test="!(obj.ids==null||obj.ids=='')">
+			and id in
+			<foreach collection="obj.ids" index="index" item="item" open="(" separator="," close=")">
+	            #{item}
+	        </foreach> 
+		</if>
+		<if test="sortKey=='timestamp'||sortKey==null||sortKey==''">order by time ${sortType}</if>
+		<if test="sortKey=='matchId'">order by id ${sortType}</if>
+		<if test="sortKey=='organCode'">order by itcode ${sortType}</if>
+		<if test="sortKey=='content'">order by itname ${sortType}</if>
+	</sql>
+	
+	<select id="queryPasswordByName" resultType="java.lang.String" parameterType="String">
+		<![CDATA[
+			select password from user
+			where name= #{name}	
+		]]>	
+	</select>
+	
+	<insert id="addstatis"  parameterType="NewsStatis">
+		<![CDATA[
+			insert into news_duprmv_statis(id,timestamp,newsnum) values(#{id},#{timestamp},#{newsnum})
+		]]>	
+	</insert>
+	<select id="querystatis" resultMap="common.NewsStatisResult"  parameterType="NewsDTO">
+		<![CDATA[
+			select * from news_duprmv_statis where timestamp > #{timestamp} order by timestamp asc
+		]]>	
+	</select>
+	
+	<insert id="addvelocity"  parameterType="NewsVelocity">
+		<![CDATA[
+			insert into news_duprmv_velocity(id,timestamp,velocity) values(#{id},#{timestamp},#{velocity})
+		]]>	
+	</insert>
+	<select id="queryvelocity" resultMap="common.NewsVelocityResult"  parameterType="NewsDTO">
+		<![CDATA[
+			select * from news_duprmv_velocity where timestamp > #{timestamp} order by timestamp asc
+		]]>	
+	</select>
+	
+	<insert id="addratio"  parameterType="NewsRatio">
+		<![CDATA[
+			insert into news_duprmv_ratio(id,timestamp,ratio) values(#{id},#{timestamp},#{ratio})
+		]]>	
+	</insert>
+	<select id="queryratio" resultMap="common.NewsRatioResult"  parameterType="NewsDTO">
+		<![CDATA[
+			 select * from news_duprmv_ratio where timestamp > #{timestamp} order by timestamp asc
+		]]>	
+	</select>
+	<insert id="addtrash"  parameterType="NewsTrash">
+		<![CDATA[
+			insert into news_duprmv_trash(id,timestamp,trash) values(#{id},#{timestamp},#{trash})
+		]]>	
+	</insert>
+	<select id="querytrash" resultMap="common.NewsTrashResult"  parameterType="NewsDTO">
+		<![CDATA[
+			select * from news_duprmv_trash where timestamp > #{timestamp} order by timestamp asc
+		]]>	
+	</select>
+	
+	<!-- 查询五条线   -->
+	<select id="querydust" resultMap="common.NewsDustResult"  parameterType="NewsDTO">
+		<![CDATA[
+			 select * from news_duprmv_timedust where timestamp > #{timestamp} order by timestamp asc
+		]]>	
+	</select>
+	
+	<select id="queryshingle" resultMap="common.NewsShingleResult"  parameterType="NewsDTO">
+		<![CDATA[
+			 select * from news_duprmv_timeshingle where timestamp > #{timestamp} order by timestamp asc
+		]]>	
+	</select>
+	
+	<select id="queryshingling" resultMap="common.NewsShinglingResult"  parameterType="NewsDTO">
+		<![CDATA[
+			 select * from news_duprmv_timeshingling where timestamp > #{timestamp} order by timestamp asc
+		]]>	
+	</select>
+	
+	<select id="querysimhash" resultMap="common.NewsSimhashResult"  parameterType="NewsDTO">
+		<![CDATA[
+			 select * from news_duprmv_timesimhash where timestamp > #{timestamp} order by timestamp asc
+		]]>	
+	</select>
+	
+	<select id="queryweight" resultMap="common.NewsWeightResult"  parameterType="NewsDTO">
+		<![CDATA[
+			 select * from news_duprmv_timeweight where timestamp > #{timestamp} order by timestamp asc
+		]]>	
+	</select>
+	
+	<!-- 查询指纹 -->
+	<select id="queryfingerprints" resultMap="common.NewsFigerPrintsResult"  parameterType="NewsDTO">
+		<![CDATA[
+			 select * from news_duprmv_logs where type='stat' and times > #{timestamp} order by times asc
+		]]>	
+	</select>
+	
+	
+	<!-- 根据时间段流入量查询 -->
+	<select id="queryVolumeIn"  resultMap="common.NewsVolumeInResult"  parameterType="SearchDTO">
+		select count(*) inflow from news_duprmv_content where 1=1
+	    <include refid="queryVolumeIn_filter_sql"/> 
+	</select>
+	<select id="queryVolumeInCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+		select count(*)/(count(*))  from news_duprmv_content where 1=1
+	</select>
+
+	<sql id="queryVolumeIn_filter_sql">
+		<if test="!(obj.dateStr_Start==null||obj.dateStr_Start=='')">
+		<![CDATA[
+			and timein >= #{obj.dateStr_Start}
+			]]>	
+		</if>
+		<if test="!(obj.dateStr_End==null||obj.dateStr_End=='')">
+		<![CDATA[
+			and timein <= #{obj.dateStr_End}
+			]]>	
+		</if>
+	</sql>
+	
+	
+	<!-- 根据时间段流出量查询 -->
+	<select id="queryVolumeOut"  resultMap="common.NewsVolumeOutResult"  parameterType="SearchDTO">
+		select count(*) outflow from news_duprmv_content where 1=1
+	    <include refid="queryVolumeOut_filter_sql"/> 
+	</select>
+	<select id="queryVolumeOutCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+		select count(*)/(count(*))  from news_duprmv_content
+	</select>
+
+	<sql id="queryVolumeOut_filter_sql">
+		<if test="!(obj.dateStr_Start==null||obj.dateStr_Start=='')">
+		<![CDATA[
+			and timeout >= #{obj.dateStr_Start}
+			]]>	
+		</if>
+		<if test="!(obj.dateStr_End==null||obj.dateStr_End=='')">
+		<![CDATA[
+			and timeout <= #{obj.dateStr_End}
+			]]>	
+		</if>
+	</sql>
+	
+	 <!--查询含垃圾、纯垃圾新闻量-->
+	<select id="queryDust" resultMap="common.NewsStageDustResult"  parameterType="NewsVolumeDTO">
+		<![CDATA[
+			 select count(*) sum, 2 containDust ,3 pureDust from news_duprmv_content where 
+			        time>=#{dateStr_Start} and time<=#{dateStr_End}
+			 union 
+			 select 1 sum,count(*) containDust, 3 pureDust from news_duprmv_content where isdust=1 
+			    and time>=#{dateStr_Start} and time<=#{dateStr_End}
+			 union 
+			 select 1 sum,2 containDust,count(*) pureDust from news_duprmv_content where ID2=0 
+			    and isdust=1 and time>=#{dateStr_Start} and time<=#{dateStr_End};
+		]]>	
+	</select>
+	
+	
+	<!-- 根据条件去重量查询 -->
+	<select id="queryDup"  resultMap="common.NewsDupTotalResult"  parameterType="SearchDTO">
+		select id, count, time from dupIDcount where count>0
+	    <include refid="queryDup_filter_sql"/> 
+	</select>
+	<select id="queryDupCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+		select count(*)  from dupIDcount where count>0
+		<include refid="queryDup_filter_sql"/> 
+	</select>
+
+	<sql id="queryDup_filter_sql">
+		<if test="!(obj.dateStr_Start==null||obj.dateStr_Start=='')">
+		<![CDATA[
+			and time >= #{obj.dateStr_Start}
+			]]>	
+		</if>
+		<if test="!(obj.dateStr_End==null||obj.dateStr_End=='')">
+		<![CDATA[
+			and time <= #{obj.dateStr_End}
+			]]>	
+		</if>
+		<if test="!(obj.ids==null||obj.ids=='')">
+			and id in
+			<foreach collection="obj.ids" index="index" item="item" open="(" separator="," close=")">
+	            #{item}
+	        </foreach> 
+		</if>
+		<if test="sortKey=='timestamp'||sortKey==null||sortKey==''">order by time ${sortType}</if>
+		<if test="sortKey=='id'">order by id ${sortType}</if>
+		<if test="sortKey=='count'">order by count ${sortType}</if>
+	</sql>
+	
+	
+	
+	<!-- 信息源过滤查询 -->
+	<select id="queryFilterInfoSource"  resultMap="common.NewsFilterResult"  parameterType="SearchDTO">
+		select id,id2,time,isdup,isdust,iscd,title,timein,timeout,timedesc,channel,group_name,site_name,webgrab from news_duprmv_content where 1=1
+        <include refid="queryFilterInfoSource_filter_sql"/>
+	</select>
+	
+	<select id="queryFilterInfoSourceCount"  resultType="java.lang.Integer" parameterType="SearchDTO">
+		select count(*) from news_duprmv_content where 1=1
+		<include refid="queryFilterInfoSource_filter_sql"/> 
+	</select>
+	
+	<!-- 通过多个条件查询过滤条件 -->
+	<sql id="queryFilterInfoSource_filter_sql">
+		<if test="!(obj.dateStr_Start==null||obj.dateStr_Start=='')">
+		    <![CDATA[
+			and time > #{obj.dateStr_Start}
+			]]>	
+		</if>
+		<if test="!(obj.dateStr_End==null||obj.dateStr_End=='')">
+		    <![CDATA[
+			and time < #{obj.dateStr_End}
+			]]>	
+		</if>
+		<if test="!(obj.groupName==null||obj.groupName=='')">
+			and group_name = #{obj.groupName}
+		</if>
+		<if test="!(obj.siteName==null||obj.siteName=='')">
+			and site_name = #{obj.siteName}
+		</if>
+		<if test="!(obj.channel==null||obj.channel=='')">
+			and channel = #{obj.channel}
+		</if>
+		<if test="sortKey=='timestamp'||sortKey==null||sortKey==''">order by time ${sortType}</if>
+		<if test="sortKey=='filterId'">order by id ${sortType}</if>
+		<if test="sortKey=='originId'">order by id2 ${sortType}</if>
+		<if test="sortKey=='isdup'">order by isdup ${sortType}</if>
+		<if test="sortKey=='istrash'">order by isdust ${sortType}</if>
+		<if test="sortKey=='title'">order by title ${sortType}</if>
+		<if test="sortKey=='timeIn'">order by timein ${sortType}</if>
+		<if test="sortKey=='timeOut'">order by timeout ${sortType}</if>
+		<if test="sortKey=='timedesc'">order by timedesc ${sortType}</if>
+		<if test="sortKey=='webgrab'">order by webgrab ${sortType}</if>
+	</sql>
+	
+	
+	<!-- 信息源 去重量量查询 -->
+	<select id="queryFilterInfoSourceDuplicateRatio"  resultType="java.lang.Integer"  parameterType="NewsDuplicateInfoSourceDTO">
+		select count(*) from news_duprmv_content where isdup=1
+		<include refid="queryFilterInfoSourceRatio_filter_sql"/>
+	</select>
+
+	
+	
+	<!-- 信息源 保留量量查询 -->
+	<select id="queryFilterInfoSourceUNDuplicateRatio"  resultType="java.lang.Integer"  parameterType="NewsDuplicateInfoSourceDTO">
+		select count(*) from news_duprmv_content where isdup=0
+		<include refid="queryFilterInfoSourceRatio_filter_sql"/>
+	</select>
+	
+	
+	<sql id="queryFilterInfoSourceRatio_filter_sql">
+	<if test="!(dateStr_Start==null||dateStr_Start=='')">
+	    <![CDATA[
+		and time > #{dateStr_Start}
+		]]>	
+	</if>
+	<if test="!(dateStr_End==null||dateStr_End=='')">
+	    <![CDATA[
+		and time < #{dateStr_End}
+		]]>	
+	</if>
+	<if test="!(groupName==null||groupName=='')">
+		and group_name = #{groupName}
+	</if>
+	<if test="!(siteName==null||siteName=='')">
+		and site_name = #{siteName}
+	</if>
+	<if test="!(channel==null||channel=='')">
+		and channel = #{channel}
+	</if>
+	</sql>
+	
+	<!-- 查找信息源的总条数 -->
+	<select id="queryFilterInfoSourceTotal"  resultType="java.lang.Integer"  parameterType="NewsDuplicateInfoSourceDTO">
+		select count(*) from news_duprmv_content where 1=1
+		<include refid="queryFilterInfoSourceRatio_filter_sql"/>
+	</select>
+	
+	
+	<!-- 查找信息源的正文为空  -->
+	<select id="queryFilterInfoSourceContentNULLRatio"  resultType="java.lang.Integer"  parameterType="NewsDuplicateInfoSourceDTO">
+		select count(*) from news_duprmv_content where dustflag=0
+		<include refid="queryFilterInfoSourceRatio_filter_sql"/>
+	</select>
+	
+	
+    <!-- 查找信息源的纯垃圾  -->
+	<select id="queryFilterInfoSourceDustRatio"  resultType="java.lang.Integer"  parameterType="NewsDuplicateInfoSourceDTO">
+		select count(*) from news_duprmv_content where dustflag=1
+		<include refid="queryFilterInfoSourceRatio_filter_sql"/>
+	</select>
+	
+	 <!-- 查找信息源的部分垃圾  -->
+	<select id="queryFilterInfoSourceTotalDustRatio"  resultType="java.lang.Integer"  parameterType="NewsDuplicateInfoSourceDTO">
+		select count(*) from news_duprmv_content where dustflag=2
+		<include refid="queryFilterInfoSourceRatio_filter_sql"/>
+	</select>
+	
+	<!-- 查询初始化所有content数据 -->
+	<select id="queryContentAll"  resultMap="common.NewsFilterSimplifyResult" >
+		select isdup,dustflag,group_name,site_name,channel,trssource,autoid,time from news_duprmv_content
+	</select>
+	
+	
+    <!-- 每次浏览，查询最新content数据 -->
+	<select id="queryContentFilterAll"  resultMap="common.NewsFilterSimplifyResult" parameterType="java.lang.Long">
+		select isdup,dustflag,group_name,site_name,channel,trssource,autoid,time from news_duprmv_content where autoid > #{o}
+	</select>
+	
+	
+	
+</mapper>
