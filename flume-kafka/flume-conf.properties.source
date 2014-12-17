@@ -1,0 +1,38 @@
+test-agent.sources = kafka-source
+test-agent.channels = mc-1
+test-agent.sinks = hdfs-sink1
+
+
+#source
+test-agent.sources.kafka-source.type = org.apache.flume.source.kafka.KafkaSource
+test-agent.sources.kafka-source.channels = mc-1
+test-agent.sources.kafka-source.zookeeperConnect = 10.15.144.56:2181,10.15.144.58:2181,10.15.144.60:2181
+test-agent.sources.kafka-source.topic = test
+test-agent.sources.kafka-source.groupId = test-group2
+test-agent.sources.kafka-source.kafka.consumer.timeout.ms = 100
+
+
+# sinks
+test-agent.sinks.hdfs-sink1.type = hdfs
+test-agent.sinks.hdfs-sink1.channel = mc-1
+test-agent.sinks.hdfs-sink1.hdfs.path = hdfs://10.15.144.56:9000/kafka/raw_log/%Y/%m/%d/
+
+test-agent.sinks.hdfs-sink1.hdfs.filePrefix = data
+test-agent.sinks.hdfs-sink1.hdfs.minBlockReplicas= 1
+###100M回滚
+test-agent.sinks.hdfs-sink1.hdfs.rollSize = 1048576
+test-agent.sinks.hdfs-sink1.hdfs.rollCount = 0
+test-agent.sinks.hdfs-sink1.hdfs.rollInterval = 0
+test-agent.sinks.hdfs-sink1.hdfs.idleTimeout = 60
+
+
+######## codec for hdfs sink
+test-agent.sinks.hdfs-sink1.hdfs.fileType = CompressedStream
+test-agent.sinks.hdfs-sink1.hdfs.codeC = GzipCodec
+
+
+######
+
+test-agent.channels.mc-1.type = file
+test-agent.channels.mc-1.checkpointDir = /home/hadoop2/flume/flume-channel/kafka/checkpoint
+test-agent.channels.mc-1.dataDirs = /home/hadoop2/flume/flume-channel/kafka/data

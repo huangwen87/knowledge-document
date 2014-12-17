@@ -1,0 +1,29 @@
+test-agent.sources = file-source
+test-agent.channels = mc-1
+test-agent.sinks = kafka-sink1
+
+
+#source
+test-agent.sources.file-source.type = com.gw.flume.source.FileSource
+test-agent.sources.file-source.deserializer=com.gw.flume.source.LineDes$Builder
+test-agent.sources.file-source.deserializer.maxLineLength=65535
+test-agent.sources.file-source.spoolDir =/home/hadoop2/flume/data-kafka
+test-agent.sources.file-source.filePattern =externalreadproxy.std.\\d\\d\\d\\d-\\d\\d-\\d\\d.log
+test-agent.sources.file-source.channels = mc-1
+test-agent.sources.file-source.batchSize = 100
+
+
+# sinks
+test-agent.sinks.kafka-sink1.type = org.apache.flume.sink.kafka.KafkaSink
+test-agent.sinks.kafka-sink1.topic = mytest
+test-agent.sinks.kafka-sink1.brokerList = 10.15.144.56:9092,10.15.144.58:9093,10.15.144.60:9094
+test-agent.sinks.kafka-sink1.requireAcks = 1
+test-agent.sinks.kafka-sink1.batchSize = 20
+test-agent.sinks.kafka-sink1.channel = mc-1
+test-agent.sinks.kafka-sink1.partitions = 3
+
+
+######
+test-agent.channels.mc-1.type = file
+test-agent.channels.mc-1.checkpointDir = /home/hadoop2/flume/flume-channel/kafka-sink/checkpoint
+test-agent.channels.mc-1.dataDirs = /home/hadoop2/flume/flume-channel/kafka-sink/data
