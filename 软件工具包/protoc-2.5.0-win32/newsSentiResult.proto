@@ -1,0 +1,20 @@
+option java_package = "com.gw.ps.pbbean";
+option java_outer_classname = "PbNewsSentimentTreated";
+option optimize_for = LITE_RUNTIME;
+
+message NewsSentiment {
+	required string newsCode = 1;			//新闻ID
+	optional int32 sentiment = 2;			//新闻情感识别结果，-1表示负面，1表示正面，0不确定
+	optional double posRate = 3;			//新闻是正面的概率
+	optional double negRate = 4;			//新闻是负面的概率
+	optional int64 processTime = 5;		//处理这篇新闻所用的时间
+	required string title = 6;				//标题
+	required string text = 7;					//新闻内容
+	required string result = 8;				//原行业分类结果，这边暂时无意义
+	repeated string classNameList = 9;//公司分类名称
+	repeated string companyNames = 10;//公司
+	optional string accessTime = 11;  //新闻流入时间
+	optional bool isFiltered = 12;		//是否被过滤
+	optional string typeOf = 13;       //类型 新闻/微博/其他
+	optional string publishdate = 14;   //新闻发布时间 
+}

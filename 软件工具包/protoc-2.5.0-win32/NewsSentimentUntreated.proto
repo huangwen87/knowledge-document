@@ -1,0 +1,17 @@
+option java_package = "com.gw.ps.pbbean";
+option java_outer_classname = "PbNewsSentimentUntreated";
+option optimize_for = LITE_RUNTIME;
+
+message NewsSentimentUntreated {
+	required string newsCode = 1;			 //新闻ID
+	optional string title = 2;				 //标题
+	optional string text = 3;				 //新闻内容
+	optional string newsType = 4;			//新闻类型
+	repeated string companyIds = 5;       //公司Id
+	repeated string companyNames = 6;       //公司名称
+	repeated string industryIds = 7;       //行业Id
+	repeated string industryNames = 8;       //行业名称
+	optional string entryDate = 9;       //流入时间
+	optional string typeOf = 10;       //类型 新闻/微博/其他
+	optional string publishdate = 11;   //新闻发布时间
+}
