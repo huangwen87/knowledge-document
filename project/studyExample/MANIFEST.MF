@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: com.mixexample.HbaseMapReduce
-Class-Path: ./lib/zookeeper-3.3.2.jar
-  ./lib/log4j-1.2.15.jar
-  ./lib/hbase-0.94.14-tests.jar
-  ./lib/hbase-0.94.14.jar
-  ./lib/guava-11.0.2.jar
-  ./lib/protobuf-java-2.4.0a.jar
