@@ -1,4 +1,4 @@
-package com.gw.alogrithm;
+package com.java.alogrithm;
 
 public class Test {
 

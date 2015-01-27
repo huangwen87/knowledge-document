@@ -1,4 +1,4 @@
-package com.gw.grammar;
+package com.java.grammar;
 
 class JvmMain {
 

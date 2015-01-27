@@ -1,4 +1,4 @@
-package com.gw.grammar;
+package com.java.grammar;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

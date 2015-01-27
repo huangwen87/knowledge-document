@@ -1,4 +1,4 @@
-package com.memory;
+package com.java.memory;
 
 
 public class HeapOOM {

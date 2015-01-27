@@ -1,4 +1,4 @@
-package com.gw.grammar;
+package com.java.grammar;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
